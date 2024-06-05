@@ -1,0 +1,68 @@
+.checkout-form label
+{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.checkout-form input
+{
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.order-btn
+{
+    width: 100%;
+}
+
+.orders label
+{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.orders div
+{
+    font-size: 14px;
+    padding: 10px;
+}
+
+.card-config
+{
+    /* border-top: 2px groove  blue; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+}
+
+.cardBorderConfig
+{
+    max-width: 20rem;
+    margin-top: 40px;
+    box-shadow: 10px 10px 20px #888888;
+}
+
+.cardHeaderConfig
+{
+    padding: 0;
+    text-align: center;
+}
+
+.hProducts
+{
+    text-align: center;
+}
+
+.prodTitle
+{
+    text-align: center;
+}
+
+.alertConfig
+{
+    text-align: center;
+}
+
+
+
