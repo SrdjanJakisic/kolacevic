@@ -43,6 +43,8 @@ Route::post('delete-wishlist-item', [WishlistController::class, 'removeProduct']
 
 Route::get('sort-by-price-desc', [FrontendController::class, 'sortByPriceDesc']);
 Route::get('sort-by-price-asc', [FrontendController::class, 'sortByPriceAsc']);
+Route::get('aboutus', [FrontendController::class, 'showAboutus']);
+Route::get('contact', [FrontendController::class, 'showContact']);
 
 Route::middleware(['auth'])->group(function () {  
     Route::get('cart', [CartController::class, 'viewCart']);

@@ -69,10 +69,10 @@
                                     <select class="form-select" name="orderStatus">
                                         <option {{ $order->orderStatus == '0' ? 'selected' : '' }} value="0">На чекању
                                         </option>
-                                        <option {{ $order->orderStatus == '1' ? 'selected' : '' }} value="1">Испоручено
+                                        <option {{ $order->orderStatus == '1' ? 'selected' : '' }} value="1">Обрађено
                                         </option>
                                     </select>
-                                    <button type="submit" class="btn btn-primary mt-3 float-end">Измени статус</button>
+                                    <button type="submit" class="btn btn-primary mt-3 float-end">Обради</button>
                                 </form>
                             </div>
                         </div>

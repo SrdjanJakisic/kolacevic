@@ -7,19 +7,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                {{-- <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Чоколаде
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ url('organic') }}">Органске</a></li>
-                        <li><a class="dropdown-item" href="{{ url('nonorganic') }}">Неорганске</a></li>
-                    </ul>
-                </div> --}}
                 <li class="nav-item">
                     <a class="nav-link position-relative" href="{{ url('category') }}">
                         <i class="fa-solid fa-cookie"></i>
                         Производи
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="{{ url('aboutus') }}">
+                        <i class="fa-regular fa-address-card"></i>
+                        O нама
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="{{ url('contact') }}">
+                        <i class="fa-solid fa-square-phone"></i>
+                        Контактирајте нас
                     </a>
                 </li>
             </ul>
