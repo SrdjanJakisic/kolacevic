@@ -59,7 +59,7 @@ class RegisterController extends Controller
             'phone' => ['required','int','max:15'],
         ],
         [
-            'integer' => 'Broj'
+            'integer' => 'Морате унети само бројеве'
         ]
     );
     }

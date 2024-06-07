@@ -15,40 +15,40 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label>Назив</label>
-                    <input type="text" class="form-control" name="productName">
+                    <input type="text" class="form-control" name="productName" required>
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label>Цена</label>
-                    <input type="text" class="form-control" name="productPrice">
+                    <input type="text" class="form-control" name="productPrice" required>
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label>Количина</label>
-                    <input type="text" class="form-control" name="productQuantity">
+                    <input type="text" class="form-control" name="productQuantity" required>
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label>Тежина</label>
-                    <input type="text" class="form-control" name="productWeight">
+                    <input type="text" class="form-control" name="productWeight" required>
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label>Опис</label>
-                    <textarea type="text" rows="3" class="form-control" name="productDescription"></textarea>
+                    <textarea type="text" rows="3" class="form-control" name="productDescription" required></textarea>
                 </div>
 
                 <div class="col-md-12 mb-3">
-                    <select class="form-select" name="categoryId">
+                    <select class="form-select" name="categoryId" required>
                         <option value="">Изаберите категорију</option>
                         @foreach ($category as $item)
-                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label>Слика</label>
-                    <input type="file" class="form-control" name="productImage">
+                    <input type="file" class="form-control" name="productImage" required>
                 </div>
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-success">Потврди</button>

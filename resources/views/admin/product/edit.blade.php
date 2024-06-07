@@ -16,28 +16,28 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label>Назив</label>
-                    <input type="text" class="form-control" name="productName" value="{{ $products->productName }}">
+                    <input type="text" class="form-control" name="productName" value="{{ $products->productName }}" required>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label>Опис</label>
                     <textarea type="text" rows="3" class="form-control"
-                        name="productDescription">{{ $products->productDescription }}</textarea>
+                        name="productDescription" required>{{ $products->productDescription }}</textarea>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label>Цена</label>
-                    <input type="text" class="form-control" name="productPrice" value="{{ $products->productPrice }}">
+                    <input type="text" class="form-control" name="productPrice" value="{{ $products->productPrice }}" required>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label>Количина</label>
                     <input type="text" class="form-control" name="productQuantity"
-                        value="{{ $products->productQuantity }}">
+                        value="{{ $products->productQuantity }}" required>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label>Тежина</label>
-                    <input type="text" class="form-control" name="productWeight" value="{{ $products->productWeight }}">
+                    <input type="text" class="form-control" name="productWeight" value="{{ $products->productWeight }}" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                    <select class="form-select" name="categoryId">
+                    <select class="form-select" name="categoryId" required>
                         <option value="{{ $products->category->id }}">Тренутно: {{ $products->category->name }}</option>
                         @foreach ($category as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -45,7 +45,7 @@
                     </select>
                 </div>
                 @if ($products->productImage)
-                <img src="{{ asset('assets/uploads/products/'.$products->productImage) }}" class="product-image">
+                <img src="{{ asset('assets/uploads/products/'.$products->productImage) }}" class="product-image" required>
                 @endif
                 <div class="col-md-6 mb-3">
                     <label>Слика</label>

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -27,14 +28,16 @@ class ProductController extends Controller
     {
         $products = new Product();
 
-        if ($request->hasFile('productImage'))
-        {
+        if ($request->hasFile('productImage')) {
             $file = $request->file('productImage');
             $ext = $file->getClientOriginalExtension();
             $filename = time() . '.' . $ext;
             $file->move('assets/uploads/products/', $filename);
             $products->productImage = $filename;
         }
+
+
+
         $products->categoryId = $request->input('categoryId');
         $products->productName = $request->input('productName');
         $products->productDescription = $request->input('productDescription');
@@ -51,16 +54,14 @@ class ProductController extends Controller
         $category = Category::all();
         return view('admin.product.edit', compact('products', 'category'));
     }
-    
+
     public function update(Request $request, $id)
     {
         $products = Product::find($id);
 
-        if ($request->hasFile('productImage'))
-        {
+        if ($request->hasFile('productImage')) {
             $path = 'assets/uploads/products' . $products->productImage;
-            if (File::exists($path))
-            {
+            if (File::exists($path)) {
                 File::delete($path);
             }
             $file = $request->file('productImage');
@@ -81,11 +82,10 @@ class ProductController extends Controller
 
     public function delete($id)
     {
-        
+
         $products = Product::find($id);
         $path = 'assets/uploads/products' . $products->productImage;
-        if (File::exists($path))
-        {
+        if (File::exists($path)) {
             File::delete($path);
         }
         $products->delete();
