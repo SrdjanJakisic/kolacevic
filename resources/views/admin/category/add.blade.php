@@ -19,16 +19,6 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                    <label>Slug</label>
-                    <input type="text" class="form-control" name="categorySlug">
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <label>Статус</label>
-                    <input type="checkbox" class="form-control" name="categoryStatus">
-                </div>
-
-                <div class="col-md-6 mb-3">
                     <label>Опис</label>
                     <textarea type="text" rows="3" class="form-control" name="categoryDescription"></textarea>
                 </div>

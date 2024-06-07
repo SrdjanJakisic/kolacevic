@@ -35,11 +35,9 @@ class CategoryController extends Controller
         }
 
         $category->name = $request->input('categoryName');
-        $category->slug = $request->input('categorySlug');
-        $category->status = $request->input('categoryStatus') == TRUE?'1':'0';
         $category->description = $request->input('categoryDescription');
         $category->save();
-        return redirect('/dashboard')->with('msg', "Успешно додато");
+        return redirect('categories')->with('msg', "Категорија успешно убачена");
 
     }
 
@@ -68,11 +66,9 @@ class CategoryController extends Controller
             $category->image = $filename;
         }
         $category->name = $request->input('categoryName');
-        $category->slug = $request->input('categorySlug');
-        $category->status = $request->input('categoryStatus') == TRUE?'1':'0';
         $category->description = $request->input('categoryDescription');
         $category->update();
-        return redirect('/dashboard')->with('msg', "Успешно додато");
+        return redirect('categories')->with('msg', "Категорија успешно промењена");
     }
 
     public function delete($id)

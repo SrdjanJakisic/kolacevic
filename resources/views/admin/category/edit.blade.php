@@ -10,7 +10,7 @@
         <h4>Измени категорију</h4>
     </div>
     <div class="card-body">
-        <form action="{{ url('update-category/'. $category->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('update-category/' . $category->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">
@@ -20,22 +20,13 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                    <label>Slug</label>
-                    <input type="text" value="{{ $category->slug }}" class="form-control" name="categorySlug">
-                </div>
-
-                <div class="col-md-6 mb-3">
-                    <label>Статус</label>
-                    <input type="checkbox"{{ $category->status == "1" ? 'checked':'' }} class="form-control" name="categoryStatus">
-                </div>
-
-                <div class="col-md-6 mb-3">
                     <label>Опис</label>
-                    <textarea type="text" rows="3" class="form-control" name="categoryDescription">{{ $category->description }}</textarea>
+                    <textarea type="text" rows="3" class="form-control"
+                        name="categoryDescription">{{ $category->description }}</textarea>
                 </div>
 
                 @if ($category->image)
-                    <img src="{{ asset('assets/uploads/categories/'. $category->image) }}" alt="" >
+                    <img src="{{ asset('assets/uploads/categories/' . $category->image) }}" alt="">
                 @endif
                 <div class="col-md-6 mb-3">
                     <label>Слика</label>
