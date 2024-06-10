@@ -21,6 +21,9 @@
                 <div class="col-md-6 mb-3">
                     <button type="submit" class="btn btn-success">Потврди</button>
                 </div>
+                <div class="col-md-6 mb-3">
+                    <a class="btn btn-success" href="{{ url('edit-user/') }}">Повратак</a>
+                </div>
             </div>
             @if (session()->has('msg'))
             <br>

@@ -42,8 +42,9 @@ $(document).ready(function () {
             .val();
 
         $.ajax({
-            method: "POST",
+            method: "PUT",
             url: "{{route('addToWishlist')}}",
+            // url: "add-to=wishlist",
             data: {
                 productId: productId,
             },

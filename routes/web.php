@@ -15,21 +15,11 @@ use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Routing\RouteGroup;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-/*  Route::get('/', function(){
-    return view('home');
-});  */ 
 
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('category', [FrontendController::class, 'category']);
 Route::get('view-category/{id}', [FrontendController::class, 'viewCategory']);
 Route::get('view-category/{id}/{productId}', [FrontendController::class, 'productView']);
-
-/* Route::get('/', [FrontendController::class, 'index']);
-Route::get('organic', [FrontendController::class, 'organic']);
-Route::get('nonorganic', [FrontendController::class, 'nonorganic']);
-Route::get('organic/{id}', [FrontendController::class, 'productDetails']);
-Route::get('nonorganic/{id}', [FrontendController::class, 'productDetails']);
-Route::get('/productDetails/{id}', [FrontendController::class, 'productDetails']); */
 
 Auth::routes();
 

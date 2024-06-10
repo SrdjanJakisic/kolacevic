@@ -3,6 +3,7 @@
 @section('title', $productDetails->productName)
 
 @section('content')
+@method('POST')
 <br><br>
 <div class="container">
     <div class="card shadow product_data">
