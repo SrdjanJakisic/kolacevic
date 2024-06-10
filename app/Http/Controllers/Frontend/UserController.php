@@ -31,6 +31,12 @@ class UserController extends Controller
 
     public function updateUser(Request $request, $id)
     {
+        $validator = $request->validate(
+            [
+                'phone' => ['int']
+            ]
+        );
+
         $user = User::find($id);
 
         $user->firstName = $request->input('firstName');

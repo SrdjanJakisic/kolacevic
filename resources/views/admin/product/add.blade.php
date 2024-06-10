@@ -4,7 +4,18 @@
 Админ панел - Додај производ
 @endsection
 
+
+
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="card">
     <div class="card-header">
         <h4>Додај производ</h4>

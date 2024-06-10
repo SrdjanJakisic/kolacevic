@@ -26,6 +26,14 @@ class ProductController extends Controller
 
     public function insert(Request $request)
     {
+        $validator = $request->validate(
+            [
+                'productPrice' => ['int'],
+                'productQuantity' => ['int'],
+                'productWeight' => ['int']
+            ]
+        );
+
         $products = new Product();
 
         if ($request->hasFile('productImage')) {
@@ -35,8 +43,6 @@ class ProductController extends Controller
             $file->move('assets/uploads/products/', $filename);
             $products->productImage = $filename;
         }
-
-
 
         $products->categoryId = $request->input('categoryId');
         $products->productName = $request->input('productName');

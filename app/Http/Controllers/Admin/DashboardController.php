@@ -36,16 +36,12 @@ class DashboardController extends Controller
 
     public function insertManager(Request $request)
     {
-
-        // return User::create([
-        //     'firstName' => $data['firstName'],
-        //     'lastName' => $data['lastName'],
-        //     'email' => $data['email'],
-        //     'password' => Hash::make($data['password']),
-        //     'address' => $data['address'],
-        //     'city' => $data['city'],
-        //     'phone' => $data['phone'],
-        // ]);
+        $validator = $request->validate(
+            [
+                'phone' => ['int']
+            ]
+        );
+        
         $user = new User();
         $user->firstName = $request->input('firstName');
         $user->lastName = $request->input('lastName');
