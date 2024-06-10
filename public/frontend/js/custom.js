@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    loadcart();
+
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
@@ -40,7 +43,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: "POST",
-            url: "/add-to-wishlist",
+            url: "{{route('addToWishlist')}}",
             data: {
                 productId: productId,
             },
@@ -159,4 +162,17 @@ $(document).ready(function () {
             },
         });
     });
+
+    function loadcart()
+    {
+        $.ajax({
+            method: "GET",
+            url: "load-cart-data",
+            success: function(response){
+                $('.cart-count').html('')
+                $('.cart-count').html(response.count)
+                console.log(response.count)
+            }
+        })
+    }
 });

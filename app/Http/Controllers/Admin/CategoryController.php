@@ -25,11 +25,10 @@ class CategoryController extends Controller
     {
         $category = new Category();
 
-        if($request->hasFile('categoryImage'))
-        {
+        if ($request->hasFile('categoryImage')) {
             $file = $request->file('categoryImage');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.' .$ext;
+            $filename = time() . '.' . $ext;
             $file->move('assets/uploads/categories/', $filename);
             $category->image = $filename;
         }
@@ -51,17 +50,15 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
-        if($request->hasFile('categoryImage'))
-        {
-            $path = 'assets/uploads/categories'. $category->image;
-            if(File::exists($path))
-            {
+        if ($request->hasFile('categoryImage')) {
+            $path = 'assets/uploads/categories' . $category->image;
+            if (File::exists($path)) {
                 File::delete($path);
             }
 
             $file = $request->file('categoryImage');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.' .$ext;
+            $filename = time() . '.' . $ext;
             $file->move('assets/uploads/categories/', $filename);
             $category->image = $filename;
         }
@@ -74,18 +71,24 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $category = Category::find($id);
-
-        if($category->image)
+        //$product = Product::count()->where("categoryId" == $id);
+        $products = Product::where('categoryId', $id)->get();
+        if ($products->count() > 0) 
         {
-            $path = 'assets/uploads/categories/'.$category->image;
-            if(File::exists($path))
-            {
-                File::delete($path);
+            return redirect('categories')->with('msgRed', "Категорија садржи производе!");
+        } 
+        else 
+        {
+            if ($category->image) {
+                $path = 'assets/uploads/categories/' . $category->image;
+                if (File::exists($path)) {
+                    File::delete($path);
+                }
             }
+
+            $category->delete();
         }
 
-        $category->delete();
-        
         return redirect('categories')->with('msg', "Категорија је успешно обрисана!");
     }
 }

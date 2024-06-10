@@ -38,13 +38,16 @@ Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
 Route::post('update-cart', [CartController::class, 'updateCart']);
 Route::post('discount-five', [CartController::class, 'discountPrice']);
 
-Route::post('add-to-wishlist', [WishlistController::class, 'addProduct']);
+Route::get('load-cart-data', [CartController::class,'cartcount']);
+
+Route::post('add-to-wishlist', [WishlistController::class, 'addProduct']) -> name('addToWishlist');
 Route::post('delete-wishlist-item', [WishlistController::class, 'removeProduct']);
 
 Route::get('sort-by-price-desc', [FrontendController::class, 'sortByPriceDesc']);
 Route::get('sort-by-price-asc', [FrontendController::class, 'sortByPriceAsc']);
 Route::get('aboutus', [FrontendController::class, 'showAboutus']);
 Route::get('contact', [FrontendController::class, 'showContact']);
+Route::get('impressions', [FrontendController::class, 'impressionsPage']);
 
 Route::middleware(['auth'])->group(function () {  
     Route::get('cart', [CartController::class, 'viewCart']);

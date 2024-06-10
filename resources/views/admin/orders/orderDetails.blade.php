@@ -52,7 +52,7 @@
                                         <td>{{ $item->qty }}</td>
                                         <td>{{ $item->price }}</td>
                                         <td>
-                                            <img src="{{ asset('assets/uploads/products/'.$item->productImage) }}"
+                                            <img class="product-image" src="{{ asset('assets/uploads/products/'.$item->productImage) }}"
                                                 width="50px" alt="Слика производа">
                                         </td>
                                     </tr>

@@ -10,7 +10,7 @@
 </div>
 
 <div class="container my-5 cartCont">
-    <div class="card shadow">
+    < class="card shadow">
         @if($cartItems->count() > 0)
         <div class="card-body">
             @foreach ($cartItems as $item)
@@ -45,6 +45,7 @@
             </div>
             @endforeach
         </div>
+        
         <div class="card-footer discount_data">
             <h6>Укупна цена:{{ $total_price }}
                 <input type="hidden" name="total_price" value="{{ $total_price }}">

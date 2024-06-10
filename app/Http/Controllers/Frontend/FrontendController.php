@@ -15,18 +15,6 @@ class FrontendController extends Controller
         return view('frontend.index', compact('all_products'));
     }
 
-    // public function organic()
-    // {
-    //     $OrganicProducts = Product::where('categoryId', '1')->get();
-    //     return view('frontend.products.organic', compact('OrganicProducts'));
-    // }
-
-    // public function nonorganic()
-    // {
-    //     $NonorganicProducts = Product::where('categoryId', '2')->get();
-    //     return view('frontend.products.nonorganic', compact('NonorganicProducts'));
-    // }
-
     public function productDetails($id)
     {
         $productDetails = Product::where('id', $id)->first();
@@ -47,7 +35,7 @@ class FrontendController extends Controller
 
     public function category()
     {
-        $category = Category::where('status', '0')->get();
+        $category = Category::all();
         return view('frontend.category', compact('category'));
     }
 
@@ -73,5 +61,10 @@ class FrontendController extends Controller
     public function showContact()
     {
         return view('frontend.contact');
+    }
+
+    public function impressionsPage()
+    {
+        return view('frontend.impressions');
     }
 }

@@ -91,6 +91,11 @@ class CartController extends Controller
         }
     }
 
+    public function cartcount(Request $request){
+        $cartcount = Cart::where('userId', Auth::id())->count();
+        return response()->json(['count'=> $cartcount]);
+    }
+
     public function discountPrice(Request $request) //не мења цену
     {
         $total_price = $request->input('total_price');

@@ -7,13 +7,23 @@
 @section('content')
 
 @if (session()->has('msg'))
-<br>
-<div class="alert alert-success alertConfig" role="alert">
-    <h1>{{ session('msg') }}</h1>
-</div>
-@php
-session()->forget('msg');
-@endphp
+    <br>
+    <div class="alert alert-success alertConfig" role="alert">
+        <h1>{{ session('msg') }}</h1>
+    </div>
+    @php
+        session()->forget('msg');
+    @endphp
+@endif
+
+@if (session()->has('msgRed'))
+    <br>
+    <div class="alert alert-danger alertConfig" role="alert">
+        <h1>{{ session('msgRed') }}</h1>
+    </div>
+    @php
+        session()->forget('msgRed');
+    @endphp
 @endif
 
 <div>
@@ -40,11 +50,12 @@ session()->forget('msg');
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->description }}</td>
                             <td>
-                                <img src="{{ asset('assets/uploads/categories/'.$item->image) }}" class="product-image">
+                                <img src="{{ asset('assets/uploads/categories/' . $item->image) }}" class="product-image">
                             </td>
                             <td>
-                                <a href="{{ url('edit-category/'.$item->id) }}" class="btn btn-info">Измени категорију</a>
-                                <a href="{{ url('delete-category/'.$item->id) }}" class="btn btn-danger">Обриши категорију</a>
+                                <a href="{{ url('edit-category/' . $item->id) }}" class="btn btn-info">Измени категорију</a>
+                                <a href="{{ url('delete-category/' . $item->id) }}" class="btn btn-danger">Обриши
+                                    категорију</a>
                             </td>
                         </tr>
                     @endforeach

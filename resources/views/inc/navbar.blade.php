@@ -25,6 +25,12 @@
                         Контактирајте нас
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="{{ url('impressions') }}">
+                    <i class="fa-solid fa-comments"></i>
+                        Утисци
+                    </a>
+                </li>
             </ul>
 
             @guest
@@ -62,16 +68,20 @@
             @if (Auth::user()->role_as == '0')
             <div>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link position-relative" href="{{ url('cart') }}">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
-                    </li>
+                    </li> -->
+                    <a class="nav-link" href="{{ url('cart') }}">Cart
+                        <span class="badge badge-pill bg-danger cart-count">0</span>
+                    </a>
                     <li class="nav-item">
                         <a class="nav-link position-relative" href="{{ url('wishlist') }}">
                             <i class="fa-regular fa-heart"></i>
                             Листа жеља
-                        </a>
+                        </a> <!--https://www.youtube.com/watch?v=3qqCswdepHg&list=PL_99hMDlL4d3-n63bsNaaDRnTZdCOvU6q&index=32&ab_channel=SharmaCoder -->
+
                     </li>
                     <li class="nav-item">
                         <div class="nav-item dropdown">
