@@ -10,7 +10,9 @@ class ImpressionController extends Controller
 {
     public function impressionsPage()
     {
-        return view('frontend.impressions');
+        $impression = Impressions::All();
+
+        return view('frontend.impressions', compact('impression'));
     }
 
     public function addImpresion(Request $request)
