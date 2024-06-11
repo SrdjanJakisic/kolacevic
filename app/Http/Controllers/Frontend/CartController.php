@@ -99,10 +99,10 @@ class CartController extends Controller
     public function discountPrice(Request $request) //не мења цену
     {
         $total_price = $request->input('total_price');
-        $discount5 = $request->input('discount5');
+        // $discount5 = $request->input('discount5');
 
         $points = User::where('id', Auth::id())->first()->points;
-        if($discount5 == '5')
+        if($discCheck = $request->input('discCheck') == true)
         {
             $total_price = $total_price * 0.95;
 
@@ -113,6 +113,7 @@ class CartController extends Controller
             $user->update();
             
         }
+
         $cartItems = Cart::where('userId', Auth::id())->get();
         return view('frontend.cart', compact('total_price', 'cartItems'));
     }

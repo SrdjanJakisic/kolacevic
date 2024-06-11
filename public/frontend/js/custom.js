@@ -153,7 +153,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "/discount-five",
+            url: "discount-five",
             data: {
                 discount5: discount5,
                 total_price: total_price,
