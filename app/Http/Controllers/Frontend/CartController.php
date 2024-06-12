@@ -117,4 +117,5 @@ class CartController extends Controller
         $cartItems = Cart::where('userId', Auth::id())->get();
         return view('frontend.cart', compact('total_price', 'cartItems'));
     }
+    
 }
