@@ -38,8 +38,8 @@ Route::post('delete-wishlist-item', [WishlistController::class, 'removeProduct']
 
 Route::get('sort-by-price-desc', [FrontendProduct::class, 'sortByPriceDesc']);
 Route::get('sort-by-price-asc', [FrontendProduct::class, 'sortByPriceAsc']);
-Route::get('aboutus', [FrontendProduct::class, 'showAboutus']);
-Route::get('contact', [FrontendProduct::class, 'showContact']);
+Route::get('aboutus', [FrontendController::class, 'showAboutus']);
+Route::get('contact', [FrontendController::class, 'showContact']);
 
 Route::get('impressions', [ImpressionController::class, 'impressionsPage']);
 Route::post('add-impression', [ImpressionController::class, 'addImpresion']);

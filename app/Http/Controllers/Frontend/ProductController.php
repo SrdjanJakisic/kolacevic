@@ -46,14 +46,4 @@ class ProductController extends Controller
         $products = Product::where('id', $productId)->first();
         return view('frontend.products.view', compact('products'));
     }
-
-    public function showAboutus()
-    {
-        return view('frontend.aboutus');
-    }
-
-    public function showContact()
-    {
-        return view('frontend.contact');
-    } 
 }
