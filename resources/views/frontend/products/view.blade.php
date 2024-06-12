@@ -37,7 +37,6 @@
                         {{ $products->productDescription }}
                     </p>
                     <p><label class="me-3">Категорија: {{ $products->category->name }}</label></p>
-                    {{-- <p><label class="me-3">На залихама: {{ $products->productQuantity }}</label></p> --}}
                     <hr>
                     @if($products->productQuantity > 0)
                     <label class="badge bg-success">На стању</label>
@@ -60,10 +59,10 @@
                             <br>
                             @if (Auth::user()->role_as == '0')
                             @if($products->productQuantity > 0)
-                            <button type="button" class="btn btn-success me-3 addToCartBtn float-start"> <i
+                            <button type="button" data-url="{{route('addToCart')}}" class="btn btn-success me-3 addToCartBtn float-start"> <i
                                     class="fa-solid fa-cart-shopping"></i> Додај у корпу</button>
                             @endif
-                            <button type="button" class="btn btn-primary me-3 addToWishlist float-start"> <i
+                            <button type="button" data-url="{{route('addToWishlist')}}" class="btn btn-primary me-3 addToWishlist float-start"> <i
                                     class="fa-regular fa-heart"></i> Додај на листу жеља</button>
                             @endif
 

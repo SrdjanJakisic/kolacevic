@@ -15,12 +15,6 @@ class FrontendController extends Controller
         return view('frontend.index', compact('all_products'));
     }
 
-    public function productDetails($id)
-    {
-        $productDetails = Product::where('id', $id)->first();
-        return view('frontend.products.productDetails', compact('productDetails'));
-    }
-
     public function sortByPriceDesc()
     {
         $all_products = Product::orderBy('productPrice', 'desc')->get();

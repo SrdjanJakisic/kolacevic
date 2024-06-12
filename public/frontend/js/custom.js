@@ -20,9 +20,11 @@ $(document).ready(function () {
             .find(".qty-input")
             .val();
 
+            var url = $(this).attr('data-url');
+
         $.ajax({
             type: "POST",         
-            url: "{{route('addToCart')}}",
+            url: url,
             data: {
                 productId: productId,
                 productQty: productQty,
@@ -41,16 +43,19 @@ $(document).ready(function () {
             .find(".productId")
             .val();
 
-        $.ajax({
-            method: "PUT",
-            url: "{{route('addToWishlist')}}",
-            // url: "add-to=wishlist",
+        var url = $(this).attr('data-url');
+
+        $.ajax({            
+            method: "POST",
+            url: url,
             data: {
                 productId: productId,
             },
             success: function (response) {
                 swal(response.status);
-            },
+            }
+        }).fail(function (jqXHR, textStatus, error){
+            console.log(error)
         });
     });
 
@@ -148,7 +153,7 @@ $(document).ready(function () {
     $(".discount").on("click", function (e) {
         e.preventDefault();
 
-        var discount5 = $(this).closest(".discount_data").find(".discount5").val();
+        // var discount5 = $(this).closest(".discount_data").find(".discount5").val();
         var total_price = $(this).closest(".discount_data").find(".total_price").val();
 
         $.ajax({

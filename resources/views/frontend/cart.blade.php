@@ -50,7 +50,8 @@
             <h6>Укупна цена:{{ $total_price }}
                 <input type="hidden" name="total_price" value="{{ $total_price }}">
                 @if (Auth::user()->points > 5)
-                <input type="checkbox" name="discount" class="discount5" value="5"> <label>Да ли желите да искористе попуст?</label>
+                <!-- <input type="checkbox" name="discount" class="discount5" value="5">  -->
+                <label>Да ли желите да искористе попуст?</label>
                 <button class="btn btn-outline-success discount">Примените попуст</button>
                 @endif
                 <a href="{{ url('checkout') }}" class="btn btn-outline-success float-end">Наставите на излаз</a>
