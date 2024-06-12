@@ -8,6 +8,7 @@ use App\Http\Controllers\frontend\ImpressionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\ProductController as FrontendProduct;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
@@ -17,10 +18,10 @@ use Illuminate\Routing\RouteGroup;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
-Route::get('/', [FrontendController::class, 'index']);
-Route::get('category', [FrontendController::class, 'category']);
-Route::get('view-category/{id}', [FrontendController::class, 'viewCategory']);
-Route::get('view-category/{id}/{productId}', [FrontendController::class, 'productView']);
+Route::get('/', [FrontendProduct::class, 'index']);
+Route::get('category', [FrontendProduct::class, 'category']);
+Route::get('view-category/{id}', [FrontendProduct::class, 'viewCategory']);
+Route::get('view-category/{id}/{productId}', [FrontendProduct::class, 'productView']);
 
 Auth::routes();
 
@@ -35,10 +36,10 @@ Route::get('load-wishlist-count', [WishlistController::class,'wishlistCount']);
 Route::post('add-to-wishlist', [WishlistController::class, 'addProduct']) -> name('addToWishlist');
 Route::post('delete-wishlist-item', [WishlistController::class, 'removeProduct']);
 
-Route::get('sort-by-price-desc', [FrontendController::class, 'sortByPriceDesc']);
-Route::get('sort-by-price-asc', [FrontendController::class, 'sortByPriceAsc']);
-Route::get('aboutus', [FrontendController::class, 'showAboutus']);
-Route::get('contact', [FrontendController::class, 'showContact']);
+Route::get('sort-by-price-desc', [FrontendProduct::class, 'sortByPriceDesc']);
+Route::get('sort-by-price-asc', [FrontendProduct::class, 'sortByPriceAsc']);
+Route::get('aboutus', [FrontendProduct::class, 'showAboutus']);
+Route::get('contact', [FrontendProduct::class, 'showContact']);
 
 Route::get('impressions', [ImpressionController::class, 'impressionsPage']);
 Route::post('add-impression', [ImpressionController::class, 'addImpresion']);
