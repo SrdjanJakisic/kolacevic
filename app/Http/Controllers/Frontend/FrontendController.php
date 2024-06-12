@@ -55,10 +55,5 @@ class FrontendController extends Controller
     public function showContact()
     {
         return view('frontend.contact');
-    }
-
-    public function impressionsPage()
-    {
-        return view('frontend.impressions');
-    }
+    } 
 }

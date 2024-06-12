@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController as AdminFrontend;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\frontend\ImpressionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
@@ -38,7 +39,9 @@ Route::get('sort-by-price-desc', [FrontendController::class, 'sortByPriceDesc'])
 Route::get('sort-by-price-asc', [FrontendController::class, 'sortByPriceAsc']);
 Route::get('aboutus', [FrontendController::class, 'showAboutus']);
 Route::get('contact', [FrontendController::class, 'showContact']);
-Route::get('impressions', [FrontendController::class, 'impressionsPage']);
+
+Route::get('impressions', [ImpressionController::class, 'impressionsPage']);
+Route::post('add-impression', [ImpressionController::class, 'addImpresion']);
 
 Route::middleware(['auth'])->group(function () {  
     Route::get('cart', [CartController::class, 'viewCart']);
