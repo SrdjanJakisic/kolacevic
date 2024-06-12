@@ -17,17 +17,12 @@ class CartController extends Controller
         $productId = $request->input('productId');
         $productQty = $request->input('productQty');
 
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $product_check = Product::where('id', $productId)->first();
-            if ($product_check)
-            {
-                if (Cart::where('productId', $productId)->where('userId', Auth::id())->exists())
-                {
+            if ($product_check) {
+                if (Cart::where('productId', $productId)->where('userId', Auth::id())->exists()) {
                     return response()->json(['status' => $product_check->productName . " је већ у корпи"]);
-                }
-                else
-                {
+                } else {
                     $cartItem = new Cart();
                     $cartItem->productId = $productId;
                     $cartItem->userId = Auth::id();
@@ -37,9 +32,7 @@ class CartController extends Controller
                     return response()->json(['status' => $product_check->productName . " додат у корпу"]);
                 }
             }
-        }
-        else
-        {
+        } else {
             return response()->json(['status' => "Пријавите се да би сте наставили!"]);
         }
     }
@@ -48,27 +41,22 @@ class CartController extends Controller
     {
         $cartItems = Cart::where('userId', Auth::id())->get();
         $total_price = 0;
-        foreach($cartItems as $item)
-        {
-            $total_price += $item->products->productPrice*$item->productQty;
+        foreach ($cartItems as $item) {
+            $total_price += $item->products->productPrice * $item->productQty;
         }
         return view('frontend.cart', compact('cartItems', 'total_price'));
     }
 
     public function deleteProduct(Request $request)
     {
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $productId = $request->input('productId');
-            if (Cart::where('productId', $productId)->where('userId', Auth::id())->exists())
-            {
+            if (Cart::where('productId', $productId)->where('userId', Auth::id())->exists()) {
                 $cartItem = Cart::where('productId', $productId)->where('userId', Auth::id())->first();
                 $cartItem->delete();
                 return response()->json(['status' => "Производ је успешно обрисан"]);
             }
-        }
-        else
-        {
+        } else {
             return response()->json(['status' => "Login to Continue"]);
         }
     }
@@ -78,10 +66,8 @@ class CartController extends Controller
         $productId = $request->input('productId');
         $prodQty = $request->input('productQty');
 
-        if (Auth::check())
-        {
-            if (Cart::where('productId', $productId)->where('userId', Auth::id())->exists())
-            {
+        if (Auth::check()) {
+            if (Cart::where('productId', $productId)->where('userId', Auth::id())->exists()) {
 
                 $cart = Cart::where('productId', $productId)->where('userId', Auth::id())->first();
                 $cart->productQty = $prodQty;
@@ -91,31 +77,21 @@ class CartController extends Controller
         }
     }
 
-    public function cartcount(Request $request){
+    public function cartcount(Request $request)
+    {
         $cartcount = Cart::where('userId', Auth::id())->count();
-        return response()->json(['count'=> $cartcount]);
+        return response()->json(['count' => $cartcount]);
     }
 
-    public function discountPrice(Request $request) //не мења цену
+    public function discountPrice(Request $request)
     {
+        $cartItems = Cart::where('userId', Auth::id())->get();
+
         $total_price = $request->input('total_price');
-        // $discount5 = $request->input('discount5');
-
-        $points = User::where('id', Auth::id())->first()->points;
-        if($discCheck = $request->input('discCheck') == true)
-        {
-            $total_price = $total_price * 0.95;
-
-            $points = $points - 5;
-
-            $user = User::where('id', Auth::id())->first();
-            $user->points = $points;
-            $user->update();
-            
-        }
+        $total_price *= 0.95;
 
         $cartItems = Cart::where('userId', Auth::id())->get();
         return view('frontend.cart', compact('total_price', 'cartItems'));
     }
-    
+
 }

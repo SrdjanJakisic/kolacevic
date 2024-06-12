@@ -26,7 +26,7 @@ Auth::routes();
 Route::post('add-to-cart', [CartController::class, 'addProduct']) -> name('addToCart');
 Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
 Route::post('update-cart', [CartController::class, 'updateCart']);
-Route::post('discount-five', [CartController::class, 'discountPrice']);
+Route::post('getDiscount', [CartController::class, 'discountPrice']) -> name('getDiscount');
 
 Route::get('load-cart-data', [CartController::class,'cartcount']);
 

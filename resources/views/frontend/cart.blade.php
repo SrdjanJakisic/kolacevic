@@ -10,7 +10,7 @@
 </div>
 
 <div class="container my-5 cartCont">
-    < class="card shadow">
+    <div class="card shadow">
         @if($cartItems->count() > 0)
         <div class="card-body">
             @foreach ($cartItems as $item)
@@ -47,11 +47,14 @@
         </div>
         
         <div class="card-footer discount_data">
-            <h6>Укупна цена:{{ $total_price }}
-                <input type="hidden" name="total_price" value="{{ $total_price }}">
+            <h6>Укупна цена: {{ $total_price }}
+                <!-- <input type="hidden" name="total_price" value="{{ $total_price }}"> -->
+                <br>
+                <br>
                 @if (Auth::user()->points > 5)
-                <input type="checkbox" name="discCheck"> <label>Да ли желите да искористе попуст?</label>
-                <button class="btn btn-outline-success" data-url="{{route('addToWishlist')}}">Примените попуст</button>
+                <label>Да ли желите да искористе попуст?</label>
+                <br>
+                <button data-url="{{route('getDiscount')}}" class="btn btn-outline-success getDiscount" >Примените попуст</button>
                 @endif
                 <a href="{{ url('checkout') }}" class="btn btn-outline-success float-end">Наставите на излаз</a>
             </h6>

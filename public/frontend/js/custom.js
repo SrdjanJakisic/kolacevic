@@ -145,18 +145,18 @@ $(document).ready(function () {
         });
     });
 
-    $(".discount").on("click", function (e) {
+    $(".getDiscount").on("click", function (e) {
         e.preventDefault();
 
-        var discount5 = $(this).closest(".discount_data").find(".discount5").val();
         var total_price = $(this).closest(".discount_data").find(".total_price").val();
+
+        var url = $(this).attr('data-url')
 
         $.ajax({
             type: "POST",
-            url: "discount-five",
+            url: url,
             data: {
-                discount5: discount5,
-                total_price: total_price,
+                total_price: total_price
             },
             success: function (response) {
                 window.location.reload();
