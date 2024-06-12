@@ -51,7 +51,7 @@
                 <input type="hidden" name="total_price" value="{{ $total_price }}">
                 @if (Auth::user()->points > 5)
                 <input type="checkbox" name="discCheck"> <label>Да ли желите да искористе попуст?</label>
-                <button class="btn btn-outline-success discount">Примените попуст</button>
+                <button class="btn btn-outline-success" data-url="{{route('addToWishlist')}}">Примените попуст</button>
                 @endif
                 <a href="{{ url('checkout') }}" class="btn btn-outline-success float-end">Наставите на излаз</a>
             </h6>
