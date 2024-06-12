@@ -83,14 +83,17 @@ class CartController extends Controller
         return response()->json(['count' => $cartcount]);
     }
 
-    public function discountPrice(Request $request)
+    public function discountPrice()
     {
         $cartItems = Cart::where('userId', Auth::id())->get();
+        $total_price = 0;
 
-        $total_price = $request->input('total_price');
+        foreach ($cartItems as $item) 
+        {
+            $total_price += $item->products->productPrice * $item->productQty;
+        }
         $total_price *= 0.95;
 
-        $cartItems = Cart::where('userId', Auth::id())->get();
         return view('frontend.cart', compact('total_price', 'cartItems'));
     }
 

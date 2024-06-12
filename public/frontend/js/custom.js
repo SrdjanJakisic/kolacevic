@@ -145,24 +145,24 @@ $(document).ready(function () {
         });
     });
 
-    $(".getDiscount").on("click", function (e) {
-        e.preventDefault();
+    // $(".getDiscount").on("click", function (e) {
+    //     e.preventDefault();
 
-        var total_price = $(this).closest(".discount_data").find(".total_price").val();
+    //     var total_price = $(this).closest(".discount_data").find(".total_price").val();
 
-        var url = $(this).attr('data-url')
+    //     var url = $(this).attr('data-url')
 
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: {
-                total_price: total_price
-            },
-            success: function (response) {
-                window.location.reload();
-            },
-        });
-    });
+    //     $.ajax({
+    //         type: "POST",
+    //         url: url,
+    //         data: {
+    //             total_price: total_price
+    //         },
+    //         success: function (response) {
+    //             window.location.reload();
+    //         },
+    //     });
+    // });
 
     function loadcart()
     {
