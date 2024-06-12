@@ -29,6 +29,7 @@ Route::post('update-cart', [CartController::class, 'updateCart']);
 Route::post('discount-five', [CartController::class, 'discountPrice']);
 
 Route::get('load-cart-data', [CartController::class,'cartcount']);
+Route::get('load-wishlist-count', [WishlistController::class,'wishlistCount']);
 
 Route::post('add-to-wishlist', [WishlistController::class, 'addProduct']) -> name('addToWishlist');
 Route::post('delete-wishlist-item', [WishlistController::class, 'removeProduct']);

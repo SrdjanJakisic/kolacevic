@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     loadcart();
+    loadwishlist();
 
     $.ajaxSetup({
         headers: {
@@ -20,10 +21,10 @@ $(document).ready(function () {
             .find(".qty-input")
             .val();
 
-            var url = $(this).attr('data-url');
+        var url = $(this).attr('data-url');
 
         $.ajax({
-            type: "POST",         
+            type: "POST",
             url: url,
             data: {
                 productId: productId,
@@ -31,7 +32,9 @@ $(document).ready(function () {
             },
             success: function (response) {
                 swal(response.status);
+                loadcart();
             },
+
         });
     });
 
@@ -45,7 +48,7 @@ $(document).ready(function () {
 
         var url = $(this).attr('data-url');
 
-        $.ajax({            
+        $.ajax({
             method: "POST",
             url: url,
             data: {
@@ -53,9 +56,8 @@ $(document).ready(function () {
             },
             success: function (response) {
                 swal(response.status);
+                loadwishlist();
             }
-        }).fail(function (jqXHR, textStatus, error){
-            console.log(error)
         });
     });
 
@@ -169,16 +171,26 @@ $(document).ready(function () {
         });
     });
 
-    function loadcart()
-    {
+    function loadcart() {
         $.ajax({
             method: "GET",
             url: "load-cart-data",
-            success: function(response){
+            success: function (response) {
                 $('.cart-count').html('')
                 $('.cart-count').html(response.count)
                 console.log(response.count)
             }
         })
     }
-});
+    function loadwishlist() {
+        $.ajax({
+            method: "GET",
+            url: "load-wishlist-count",
+            success: function (response) {
+                $('.wishlist-count').html('')
+                $('.wishlist-count').html(response.count)
+                console.log(response.count)
+            }
+        })
+    }
+})

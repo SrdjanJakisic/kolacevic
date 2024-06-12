@@ -27,86 +27,85 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link position-relative" href="{{ url('impressions') }}">
-                    <i class="fa-solid fa-comments"></i>
+                        <i class="fa-solid fa-comments"></i>
                         Утисци
                     </a>
                 </li>
             </ul>
 
             @guest
-            @if(Route::has('login'))
-            <li class="nav-item">
-                <a class="btn btn-outline-primary" href="{{ route('login') }}">Пријавите се</a>
-            </li>
-            @endif
-            @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="btn btn-outline-primary" href="{{ route('register') }}">Региструјте се</a>
-            </li>
+                @if(Route::has('login'))
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary" href="{{ route('login') }}">Пријавите се</a>
+                    </li>
+                @endif
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary" href="{{ route('register') }}">Региструјте се</a>
+                    </li>
 
-            @endif
+                @endif
             @else
-            @if ((Auth::user()->role_as == '1') || (Auth::user()->role_as == '2'))
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"> <i class="fa-solid fa-user"></i>
-                    Добродошао {{ Auth::user()->firstName }}
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ url('dashboard') }}">Админ панел</a></li>
-                </ul>
-            </div>
-            <li>
-                <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">Одјавите се</a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </li>
-            @endif
-            @if (Auth::user()->role_as == '0')
-            <div>
-                <ul class="navbar-nav">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link position-relative" href="{{ url('cart') }}">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
-                    </li> -->
-                    <a class="nav-link" href="{{ url('cart') }}">Cart
-                        <span class="badge badge-pill bg-danger cart-count">0</span>
-                    </a>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="{{ url('wishlist') }}">
-                            <i class="fa-regular fa-heart"></i>
-                            Листа жеља
-                        </a> <!--https://www.youtube.com/watch?v=3qqCswdepHg&list=PL_99hMDlL4d3-n63bsNaaDRnTZdCOvU6q&index=32&ab_channel=SharmaCoder -->
-
-                    </li>
-                    <li class="nav-item">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"> <i class="fa-solid fa-user"></i>
-                                Добродошао {{ Auth::user()->firstName }}
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ url('my-orders') }}">Поруџбине</a></li>
-                                <li><a class="dropdown-item" href="{{ url('edit-user') }}">Измени податке</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">Одјавите се</a>
+                @if ((Auth::user()->role_as == '1') || (Auth::user()->role_as == '2'))
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false"> <i class="fa-solid fa-user"></i>
+                            Добродошао {{ Auth::user()->firstName }}
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url('dashboard') }}">Админ панел</a></li>
+                        </ul>
+                    </div>
+                    <li>
+                        <a class="btn btn-primary" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                                         document.getElementById('logout-form').submit();">Одјавите
+                            се</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </li>
-                </ul>
+                @endif
+                @if (Auth::user()->role_as == '0')
+                    <div>
+                        <ul class="navbar-nav">
+                            <a class="nav-link" href="{{ url('cart') }}">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge badge-pill bg-danger cart-count">0</span>
+                            </a>
+                            <li class="nav-item">
+                                <a class="nav-link position-relative" href="{{ url('wishlist') }}">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <span class="badge badge-pill bg-danger wishlist-count">0</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false"> <i class="fa-solid fa-user"></i>
+                                        Добродошао {{ Auth::user()->firstName }}
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ url('my-orders') }}">Поруџбине</a></li>
+                                        <li><a class="dropdown-item" href="{{ url('edit-user') }}">Измени податке</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                                                 document.getElementById('logout-form').submit();">Одјавите
+                                    се</a>
 
-            </div>
-            @endif
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+
+                    </div>
+                @endif
             @endguest
         </div>
     </div>
