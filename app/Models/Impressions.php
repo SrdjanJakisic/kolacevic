@@ -15,6 +15,7 @@ class Impressions extends Model
     protected $fillable =
     [
         'impressionId',
-        'impressionComment'
+        'impressionComment',
+        'username'
     ];
 }
