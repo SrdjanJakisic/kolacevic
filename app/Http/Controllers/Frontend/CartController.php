@@ -40,11 +40,14 @@ class CartController extends Controller
     public function viewCart()
     {
         $cartItems = Cart::where('userId', Auth::id())->get();
+        $user = User::where('id', Auth::id())->first();
+        $points = $user->points;
+
         $total_price = 0;
         foreach ($cartItems as $item) {
             $total_price += $item->products->productPrice * $item->productQty;
         }
-        return view('frontend.cart', compact('cartItems', 'total_price'));
+        return view('frontend.cart', compact('cartItems', 'total_price', 'points'));
     }
 
     public function deleteProduct(Request $request)
@@ -88,13 +91,16 @@ class CartController extends Controller
         $cartItems = Cart::where('userId', Auth::id())->get();
         $total_price = 0;
 
+        $user = User::where('id', Auth::id())->first();
+        $points = $user->points;
+
         foreach ($cartItems as $item) 
         {
             $total_price += $item->products->productPrice * $item->productQty;
         }
         $total_price *= 0.95;
 
-        return view('frontend.cart', compact('total_price', 'cartItems'));
+        return view('frontend.cart', compact('total_price', 'cartItems', 'points'));
     }
 
 }

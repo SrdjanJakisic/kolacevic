@@ -34,6 +34,7 @@ class CheckOutController extends Controller
 
     public function placeOrder(Request $request)
     {
+        
         $order = new Order();
         $order->userId = Auth::id();
         $order->firstName = $request->input('firstName');
@@ -77,6 +78,22 @@ class CheckOutController extends Controller
             $user->city = $request->input('city');
             $user->update();
         }
+
+        $fullprice = 0;
+        foreach ($cartItems as $item) 
+        {
+            $fullprice += $item->products->productPrice * $item->productQty;
+        }
+
+        $userPoints = User::where('id', Auth::id())->first();
+        $oldPoints = $userPoints->points;
+        $newPoints = 0;
+        if($fullprice > $total)
+        {
+            $newPoints = $oldPoints-5;
+        }
+        $userPoints->points = $newPoints;
+        $userPoints->update();
 
         $quantity = 0;
         foreach($cartItems as $item)
