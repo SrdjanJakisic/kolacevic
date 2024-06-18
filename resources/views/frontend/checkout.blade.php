@@ -69,6 +69,9 @@
                             </tbody>
                         </table>
                         <hr>
+                        <h3>Укупна цена: {{ $total }}</h3>
+                        <input type="hidden" value="{{ $total }}" name="totalDiscount">
+                        <hr>
                         <button type="submit" class="btn btn-primary float-end order-btn">Поручите</button>
                     </div>
                 </div>

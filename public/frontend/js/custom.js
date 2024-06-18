@@ -145,25 +145,6 @@ $(document).ready(function () {
         });
     });
 
-    // $(".getDiscount").on("click", function (e) {
-    //     e.preventDefault();
-
-    //     var total_price = $(this).closest(".discount_data").find(".total_price").val();
-
-    //     var url = $(this).attr('data-url')
-
-    //     $.ajax({
-    //         type: "POST",
-    //         url: url,
-    //         data: {
-    //             total_price: total_price
-    //         },
-    //         success: function (response) {
-    //             window.location.reload();
-    //         },
-    //     });
-    // });
-
     function loadcart()
     {
         $.ajax({

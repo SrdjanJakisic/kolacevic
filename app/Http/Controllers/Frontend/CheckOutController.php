@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckOutController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        // проверава да ли је покупио ишта са request
+        // dd($request->all); 
         $oldCartItems = Cart::where('userId', Auth::id())->get();
+        $total = $request->input('totalDiscount');
+
         foreach ($oldCartItems as $item)
         {
             if (!Product::where('id', $item->productId)->where('productQuantity', '>=', $item->productQty)->exists())
@@ -23,10 +27,9 @@ class CheckOutController extends Controller
                 $removeItem = Cart::where('userId', Auth::id())->where('productId', $item->productId)->first();
                 $removeItem->delete();
             }
-            $cartItems = Cart::where('userId', Auth::id())->get();
-
-            return view('frontend.checkout', compact('cartItems'));
+            $cartItems = Cart::where('userId', Auth::id())->get(); 
         }
+        return view('frontend.checkout', compact('cartItems', 'total'));
     }
 
     public function placeOrder(Request $request)
@@ -40,12 +43,7 @@ class CheckOutController extends Controller
         $order->adress = $request->input('address');
         $order->city = $request->input('city');
 
-        $total = 0;
-        $cartItems_total = Cart::where('userId', Auth::id())->get();
-        foreach ($cartItems_total as $prod)
-        {
-            $total += $prod->products->productPrice * $prod->productQty;
-        }
+        $total = $request->input('totalDiscount');
 
         $order->totalPrice = $total;
         $order->trackingNumber = 'order' . rand(1111, 9999);
