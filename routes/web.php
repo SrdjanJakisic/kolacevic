@@ -4,9 +4,11 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController as AdminFrontend;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\frontend\ImpressionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\ProductController as FrontendProduct;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
@@ -16,10 +18,10 @@ use Illuminate\Routing\RouteGroup;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
-Route::get('/', [FrontendController::class, 'index']);
-Route::get('category', [FrontendController::class, 'category']);
-Route::get('view-category/{id}', [FrontendController::class, 'viewCategory']);
-Route::get('view-category/{id}/{productId}', [FrontendController::class, 'productView']);
+Route::get('/', [FrontendProduct::class, 'index']);
+Route::get('category', [FrontendProduct::class, 'category']);
+Route::get('view-category/{id}', [FrontendProduct::class, 'viewCategory']);
+Route::get('view-category/{id}/{productId}', [FrontendProduct::class, 'productView']);
 
 Auth::routes();
 
@@ -29,15 +31,18 @@ Route::post('update-cart', [CartController::class, 'updateCart']);
 Route::get('getDiscount', [CartController::class, 'discountPrice']);
 
 Route::get('load-cart-data', [CartController::class,'cartcount']);
+Route::get('load-wishlist-count', [WishlistController::class,'wishlistCount']);
 
 Route::post('add-to-wishlist', [WishlistController::class, 'addProduct']) -> name('addToWishlist');
 Route::post('delete-wishlist-item', [WishlistController::class, 'removeProduct']);
 
-Route::get('sort-by-price-desc', [FrontendController::class, 'sortByPriceDesc']);
-Route::get('sort-by-price-asc', [FrontendController::class, 'sortByPriceAsc']);
+Route::get('sort-by-price-desc', [FrontendProduct::class, 'sortByPriceDesc']);
+Route::get('sort-by-price-asc', [FrontendProduct::class, 'sortByPriceAsc']);
 Route::get('aboutus', [FrontendController::class, 'showAboutus']);
 Route::get('contact', [FrontendController::class, 'showContact']);
-Route::get('impressions', [FrontendController::class, 'impressionsPage']);
+
+Route::get('impressions', [ImpressionController::class, 'impressionsPage']);
+Route::post('add-impression', [ImpressionController::class, 'addImpresion']);
 
 Route::middleware(['auth'])->group(function () {  
     Route::get('cart', [CartController::class, 'viewCart']);
