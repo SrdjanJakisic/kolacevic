@@ -15,16 +15,18 @@ class ProductController extends Controller
         return view('frontend.index', compact('all_products'));
     }
 
-    public function sortByPriceDesc()
+    public function sortByPriceDesc($id)
     {
-        $all_products = Product::orderBy('productPrice', 'desc')->get();
-        return view('frontend.products.index', compact('all_products'));
+        $category = Category::where('id', $id)->first();
+        $products = Product::where('categoryId', $id)->orderBy('productPrice', 'desc')->get();
+        return view('frontend.products.index', compact('products', 'category'));
     }
 
-    public function sortByPriceAsc()
+    public function sortByPriceAsc($id)
     {
-        $all_products = Product::orderBy('productPrice', 'asc')->get();
-        return view('frontend.products.index', compact('all_products'));
+        $category = Category::where('id', $id)->first();
+        $products = Product::where('categoryId', $id)->orderBy('productPrice', 'asc')->get();
+        return view('frontend.products.index', compact('products', 'category'));
     }
 
     public function category()

@@ -30,8 +30,8 @@
     </nav>
 
     <div>
-        Сортирај по: <a href="{{ url('sort-by-price-desc') }}" style="text-decoration: none;">цени опадајуће</a>, <a
-            href="{{ url('sort-by-price-asc') }}" style="text-decoration: none;">цени растуће</a>
+        Сортирај по: <a href="{{ url('sort-by-price-desc/' . $category->id) }}" style="text-decoration: none;">цени опадајуће</a>, <a
+            href="{{ url('sort-by-price-asc/'. $category->id) }}" style="text-decoration: none;">цени растуће</a>
     </div>
 
     <div class="py-5">

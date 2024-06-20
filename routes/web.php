@@ -36,8 +36,8 @@ Route::get('load-wishlist-count', [WishlistController::class,'wishlistCount']);
 Route::post('add-to-wishlist', [WishlistController::class, 'addProduct']) -> name('addToWishlist');
 Route::post('delete-wishlist-item', [WishlistController::class, 'removeProduct']);
 
-Route::get('sort-by-price-desc', [FrontendProduct::class, 'sortByPriceDesc']);
-Route::get('sort-by-price-asc', [FrontendProduct::class, 'sortByPriceAsc']);
+Route::get('sort-by-price-desc/{id}', [FrontendProduct::class, 'sortByPriceDesc']);
+Route::get('sort-by-price-asc/{id}', [FrontendProduct::class, 'sortByPriceAsc']);
 Route::get('aboutus', [FrontendController::class, 'showAboutus']);
 Route::get('contact', [FrontendController::class, 'showContact']);
 
