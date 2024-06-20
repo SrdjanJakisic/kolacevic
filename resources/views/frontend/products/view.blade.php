@@ -80,33 +80,3 @@
     </div>
 </div>
 @endsection
-
-@section('scripts')
-<script>
-    $(".addToCartBtn").on("click", function (e) {
-        e.preventDefault();
-
-        var productId = $(this)
-            .closest(".product_data")
-            .find(".productId")
-            .val();
-        var productQty = $(this)
-            .closest(".product_data")
-            .find(".qty-input")
-            .val();
-
-        $.ajax({
-            type: "POST",
-            url: "{{route('addToCart')}}",
-            data: { 
-                productId: productId,
-                productQty: productQty,
-            },
-            success: function (response) {
-                swal(response.status);
-            },
-        });
-    });
-
-</script>
-@endsection

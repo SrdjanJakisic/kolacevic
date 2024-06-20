@@ -105,8 +105,14 @@ $(document).ready(function () {
                 productId: productId,
             },
             success: function (response) {
-                window.location.reload();
-                swal("Успешно обрисано!");
+                $.ajax({
+                    type:"GET",
+                    url: "cart",
+                    success: function(response) {
+                        $("body").html(response);
+                        swal("Успешно обрисано!");
+                    }
+                })
             },
         });
     });

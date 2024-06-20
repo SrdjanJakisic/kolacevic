@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-md-2 my-auto">
                                 <button type="button" data-url="{{route('addToCart')}}"
-                                    class="btn btn-success me-3 addToCartBtn float-start"> <i
+                                    class="btn btn-success me-3 float-start"> <i
                                         class="fa-solid fa-cart-shopping"></i> Додај у корпу</button>
                             </div>
                             <div class="col-md-2 my-auto">
