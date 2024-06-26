@@ -42,7 +42,7 @@
                                         <th>Назив</th>
                                         <th>Количина</th>
                                         <th>Цена</th>
-                                        <th>Слика</th>
+                                        <!-- <th>Слика</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,10 +51,10 @@
                                         <td>{{ $item->productName }}</td>
                                         <td>{{ $item->qty }}</td>
                                         <td>{{ $item->price }}</td>
-                                        <td>
+                                        <!-- <td>
                                             <img class="product-image" src="{{ asset('assets/uploads/products/'.$item->productImage) }}"
                                                 width="50px" alt="Слика производа">
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     @endforeach
                                 </tbody>
