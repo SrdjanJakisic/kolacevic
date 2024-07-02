@@ -17,6 +17,12 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+    
+    @section('scripts')
+    <script type='text/javascript' >
+        console.log('aaasdasdasfas')   
+    </script>
+    @endsection
 </head>
 
 <body>
@@ -25,6 +31,7 @@
 
         @yield('content')
     </div>
+   
     <script src="{{ asset('frontend/js/app.js') }}"></script>
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

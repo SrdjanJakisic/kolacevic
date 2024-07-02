@@ -38,7 +38,10 @@ class DashboardController extends Controller
     {
         $validator = $request->validate(
             [
-                'phone' => ['int']
+                'phone' => ['required','regex:/^[+]*\d*$/']
+            ],
+            [
+                'phone.regex' => 'broj telefona nije u ispravnom formatu'
             ]
         );
         

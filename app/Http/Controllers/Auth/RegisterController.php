@@ -56,10 +56,7 @@ class RegisterController extends Controller
             'password' => ['required','string', 'min:8', 'confirmed'],
             'address' => ['required','string', 'max:255'],
             'city' => ['required','string', 'max:255'],
-            'phone' => ['required','int','max:15'],
-        ],
-        [
-            'integer' => 'Морате унети само бројеве'
+            'phone' => ['required'],
         ]
     );
     }

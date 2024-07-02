@@ -168,7 +168,7 @@ $(document).ready(function () {
     {
         $.ajax({
             method: "GET",
-            url: "load-cart-data",
+            url: window.top.loadCart,
             success: function (response) {
                 $('.cart-count').html('')
                 $('.cart-count').html(response.count)

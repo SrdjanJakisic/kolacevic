@@ -167,6 +167,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'productPrice' => 'cena proizvoda',
+        'productQuantity' => 'kolicina proizvoda',
+        'productWeight' => 'tezina proizvoda'
+    ],
 
 ];
