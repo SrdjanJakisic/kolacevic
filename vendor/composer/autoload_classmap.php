@@ -22,7 +22,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Frontend\\CartController' => $baseDir . '/app/Http/Controllers/Frontend/CartController.php',
     'App\\Http\\Controllers\\Frontend\\CheckOutController' => $baseDir . '/app/Http/Controllers/Frontend/CheckOutController.php',
-    'App\\Http\\Controllers\\Frontend\\FrontendController' => $baseDir . '/app/Http/Controllers/Frontend/FrontendController.php',
+    'App\\Http\\Controllers\\Frontend\\ProductController' => $baseDir . '/app/Http/Controllers/Frontend/ProductController.php',
     'App\\Http\\Controllers\\Frontend\\UserController' => $baseDir . '/app/Http/Controllers/Frontend/UserController.php',
     'App\\Http\\Controllers\\Frontend\\WishlistController' => $baseDir . '/app/Http/Controllers/Frontend/WishlistController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
