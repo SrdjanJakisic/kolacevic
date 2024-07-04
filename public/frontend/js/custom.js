@@ -168,7 +168,7 @@ $(document).ready(function () {
     {
         $.ajax({
             method: "GET",
-            url: window.top.loadCart,
+            url: window.routes.cartRoute,
             success: function (response) {
                 $('.cart-count').html('')
                 $('.cart-count').html(response.count)
@@ -179,7 +179,7 @@ $(document).ready(function () {
     function loadwishlist() {
         $.ajax({
             method: "GET",
-            url: "load-wishlist-count",
+            url: window.routes.wishlistRoute,
             success: function (response) {
                 $('.wishlist-count').html('')
                 $('.wishlist-count').html(response.count)
