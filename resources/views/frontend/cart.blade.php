@@ -47,20 +47,24 @@
             </div>
             <form action="{{ url('checkout') }}" method="GET">
                 <div class="card-footer discount_data">
-                    <div>
-                        <h6>Укупна цена: {{ $total_price }}</h6>
-                        <h6>Имате: {{ $points }} поена</h6>
-                    </div>
-
-                    @if (Auth::user()->points > 5)
-                        <label>Да ли желите да искористе попуст?</label>
-                        <br>
-                        <a href="{{ url('getDiscount') }}" class="btn btn-outline-success">Примени попуст</a>
-                    @else
-                        <label>Да би остварили попуст потребно вам је 5 поена</label>
-                    @endif
-                    <input type="hidden" value="{{ $total_price }}" name="totalDiscount">
-                    <button type="submit" class="btn btn-outline-success float-end">Наставите на излаз</button>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column me-auto">
+                            <h6>Укупна цена: {{ $total_price }}</h6>
+                            <h6>Имате: {{ $points }} поена</h6>
+                            
+                            @if (Auth::user()->points > 5)
+                            <label>Да ли желите да искористе попуст?</label>
+                            <br>
+                            <a href="{{ url('getDiscount') }}" class="btn btn-outline-success">Примени попуст</a>
+                            @else
+                            <label>Да би остварили попуст потребно вам је 5 поена</label>
+                            @endif
+                        </div>
+                        <div class="d-flex flex-column justify-content-end align-items-center">
+                            <input type="hidden" value="{{ $total_price }}" name="totalDiscount">
+                            <button type="submit" class="btn btn-outline-success float-end">Наставите на излаз</button>
+                        </div>
+                    </div>    
                 </div>
             </form>
         @else
