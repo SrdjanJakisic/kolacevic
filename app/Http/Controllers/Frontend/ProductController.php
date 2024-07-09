@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Homepage;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -9,11 +10,12 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        $all_products = Product::all();
-        return view('frontend.index', compact('all_products'));
-    }
+    // public function index()
+    // {
+    //     $all_products = Product::all();
+    //     $home = Homepage::all();
+    //     return view('frontend.index', compact('all_products', 'home'));
+    // }
 
     public function sortByPriceDesc($id)
     {

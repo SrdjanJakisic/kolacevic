@@ -18,7 +18,7 @@ use Illuminate\Routing\RouteGroup;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
-Route::get('/', [FrontendProduct::class, 'index']);
+Route::get('/', [FrontendController::class, 'index']);
 Route::get('category', [FrontendProduct::class, 'category']);
 Route::get('view-category/{id}', [FrontendProduct::class, 'viewCategory']);
 Route::get('view-category/{id}/{productId}', [FrontendProduct::class, 'productView']);

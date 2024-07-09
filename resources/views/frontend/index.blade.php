@@ -11,30 +11,24 @@
         <div class="carousel-item active">
             <img src="{{ asset('assets/uploads/home/homeimg1.jpg') }}" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h1>Пример 1</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi prta gravida at
-                    eget
-                    metus. Nullam id dolor id nibh ultricies cehuicla ut id elit</p>
+                <h1>{{$firstSlide->title}}</h1>
+                <p>{{$firstSlide->description}}</p>
                     <button type="button" class="btn btn-info">Иди на страницу</button>
             </div>
         </div>
         <div class="carousel-item">
             <img src="{{ asset('assets/uploads/home/homeimg1.jpg') }}" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h1>Пример 2</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi prta gravida at
-                    eget
-                    metus. Nullam id dolor id nibh ultricies cehuicla ut id elit</p>
+                <h1>{{$secondSlide->title}}</h1>
+                <p>{{$secondSlide->description}}</p>
                     <button type="button" class="btn btn-info">Иди на страницу</button>
             </div>
         </div>
         <div class="carousel-item">
             <img src="{{ asset('assets/uploads/home/homeimg1.jpg') }}" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h1>Пример 3</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi prta gravida at
-                    eget
-                    metus. Nullam id dolor id nibh ultricies cehuicla ut id elit</p>
+                <h1>{{$thirdSlide->title}}</h1>
+                <p>{{$thirdSlide->description}}</p>
                     <button type="button" class="btn btn-info">Иди на страницу</button>
             </div>
         </div>
@@ -48,15 +42,5 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-md" style="background-color: green;">
-      One of three columns
-    </div>
-    <div class="col-md" style="background-color: red;">
-      One of three columns
-    </div>
-  </div>
-</div> -->
 
 @endsection
