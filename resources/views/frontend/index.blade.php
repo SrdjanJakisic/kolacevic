@@ -6,32 +6,37 @@
 
 @section('content')
 
-<style>
-    .carousel-item {
-        height: 32rem;
-        background: #777;
-        color: white;
-        position: relative;
-    }
-
-    .container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding-bottom: 50px;
-    }
-</style>
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <h1>ПРИМЕР 1</h1>
+            <img src="{{ asset('assets/uploads/home/homeimg1.jpg') }}" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Пример 1</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi prta gravida at
+                    eget
+                    metus. Nullam id dolor id nibh ultricies cehuicla ut id elit</p>
+                    <button type="button" class="btn btn-info">Иди на страницу</button>
+            </div>
         </div>
         <div class="carousel-item">
-            <h1>ПРИМЕР 2</h1>
+            <img src="{{ asset('assets/uploads/home/homeimg1.jpg') }}" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Пример 2</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi prta gravida at
+                    eget
+                    metus. Nullam id dolor id nibh ultricies cehuicla ut id elit</p>
+                    <button type="button" class="btn btn-info">Иди на страницу</button>
+            </div>
         </div>
         <div class="carousel-item">
-            <h1>ПРИМЕР 3</h1>
+            <img src="{{ asset('assets/uploads/home/homeimg1.jpg') }}" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Пример 3</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi prta gravida at
+                    eget
+                    metus. Nullam id dolor id nibh ultricies cehuicla ut id elit</p>
+                    <button type="button" class="btn btn-info">Иди на страницу</button>
+            </div>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -43,5 +48,15 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md" style="background-color: green;">
+      One of three columns
+    </div>
+    <div class="col-md" style="background-color: red;">
+      One of three columns
+    </div>
+  </div>
+</div> -->
 
 @endsection
