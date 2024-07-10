@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Homepage extends Model
 {
+    public $timestamps = false;
     use HasFactory;
 
     protected $table = 'homepage';
@@ -15,6 +16,7 @@ class Homepage extends Model
     [
         'name',
         'description',
-        'image'
+        'image',
+        'url'
     ];
 }

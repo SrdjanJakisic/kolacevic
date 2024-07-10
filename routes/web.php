@@ -87,5 +87,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-user/{id}', [DashboardController::class, 'deleteUser']);
     Route::get('create-manager', [DashboardController::class, 'createManager']);
     Route::put('insert-manager', [DashboardController::class, 'insertManager']);
+
+    Route::get('carousel', [DashboardController::class, 'carouselList']);
+    Route::get('edit-carousel/{id}', [DashboardController::class, 'editCarousel']);
+    Route::put('update-carousel/{id}', [DashboardController::class, 'updateCarousel']);
 });
 

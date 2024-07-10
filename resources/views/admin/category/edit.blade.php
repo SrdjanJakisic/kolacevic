@@ -30,7 +30,7 @@
                 @endif
                 <div class="col-md-6 mb-3">
                     <label>Слика</label>
-                    <input type="file" class="form-control" name="categoryImage">
+                    <input type="file" class="form-control" name="product-image">
                 </div>
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-success">Потврди</button>

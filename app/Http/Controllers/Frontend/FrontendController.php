@@ -11,11 +11,9 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $firstSlide = Homepage::first();
-        $secondSlide = Homepage::where('id', '2')->first();;
-        $thirdSlide = Homepage::where('id', '3')->first();;
-        
-        return view('frontend.index', compact('firstSlide', 'secondSlide', 'thirdSlide'));
+        $homepage = Homepage::all();
+
+        return view('frontend.index', compact('homepage'));
     }
     public function showAboutus()
     {

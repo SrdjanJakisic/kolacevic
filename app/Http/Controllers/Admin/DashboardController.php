@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Homepage;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 
 class DashboardController extends Controller
@@ -23,7 +25,7 @@ class DashboardController extends Controller
     }
 
     public function deleteUser($id)
-    { 
+    {
         $user = User::find($id);
         $user->delete();
         return redirect('users')->with('msg', 'Успешно обрисан корисник');
@@ -38,13 +40,13 @@ class DashboardController extends Controller
     {
         $validator = $request->validate(
             [
-                'phone' => ['required','regex:/^[+]*\d*$/']
+                'phone' => ['required', 'regex:/^[+]*\d*$/']
             ],
             [
                 'phone.regex' => 'broj telefona nije u ispravnom formatu'
             ]
         );
-        
+
         $user = new User();
         $user->firstName = $request->input('firstName');
         $user->lastName = $request->input('lastName');
@@ -58,5 +60,39 @@ class DashboardController extends Controller
         $request->session()->put('msg', 'Успешно додат менаџер!');
         $users = User::all();
         return view('admin.users.index', compact('users'));
-    }    
+    }
+
+    public function carouselList()
+    {
+        $carousel = Homepage::all();
+        return view('admin.carousel.index', compact('carousel'));
+    }
+
+    public function editCarousel($id)
+    {
+        $carousel = Homepage::find($id);
+        return view('admin.carousel.editcarousel', compact('carousel'));
+    }
+
+    public function updateCarousel(Request $request, $id)
+    {
+        $carousel = Homepage::find($id);
+
+        if ($request->hasFile('carouselImage')) {
+            $path = 'assets/uploads/home' . $carousel->image;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+
+            $file = $request->file('carouselImage');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $ext;
+            $file->move('assets/uploads/home/', $filename); 
+            $carousel->image = $filename;
+        }
+        $carousel->title = $request->input('carouselTitle');
+        $carousel->description = $request->input('carouselDescription');
+        $carousel->update();
+        return redirect('carousel')->with('msg', "Слајдер успешно измењен");
+    }
 }
