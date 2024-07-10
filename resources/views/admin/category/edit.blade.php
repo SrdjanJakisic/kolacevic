@@ -26,7 +26,7 @@
                 </div>
 
                 @if ($category->image)
-                    <img src="{{ asset('assets/uploads/categories/' . $category->image) }}" alt="">
+                    <img src="{{ asset('assets/uploads/categories/' . $category->image) }}" alt="" class="product-image">
                 @endif
                 <div class="col-md-6 mb-3">
                     <label>Слика</label>
