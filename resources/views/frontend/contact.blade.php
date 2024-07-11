@@ -35,15 +35,15 @@
             <hr class="hr" />
             <form>
                 <div class="form-group">
-                    <label for="email">Имејл адреса:</label>
+                    <label for="email">Ваша имејл адреса</label>
                     <input type="email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Име и презиме</label>
+                    <label>Ваше име и презиме</label>
                     <input type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Број телефона</label>
+                    <label>Ваш број телефона</label>
                     <input type="text" class="form-control">
                 </div>
                 <div class="form-group">

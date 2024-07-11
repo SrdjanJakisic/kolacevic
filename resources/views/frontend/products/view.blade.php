@@ -32,11 +32,9 @@
                         {{ $products->productName }}
                     </h2>
                     <hr>
-                    <label class="me-3">Цена: {{ $products->productPrice }} динара</label>
-                    <p class="mt-3">
-                        {{ $products->productDescription }}
-                    </p>
-                    <p><label class="me-3">Категорија: {{ $products->category->name }}</label></p>
+                    <p class="mt-3"> Цена: {{ $products->productPrice }} динара</p>
+                    <p class="mt-3"> Опис: {{ $products->productDescription }}</p>
+                    <p class="mt-3"> Категорија: {{ $products->category->name }}</p>
                     <hr>
                     @if($products->productQuantity > 0)
                     <label class="badge bg-success">На стању</label>
