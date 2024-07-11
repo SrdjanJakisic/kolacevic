@@ -63,6 +63,14 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = $request->validate(
+            [
+                'productPrice' => ['int'],
+                'productQuantity' => ['int'],
+                'productWeight' => ['int']
+            ]
+        );
+
         $products = Product::find($id);
 
         if ($request->hasFile('productImage')) {

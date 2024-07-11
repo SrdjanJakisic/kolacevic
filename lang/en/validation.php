@@ -168,9 +168,9 @@ return [
     */
 
     'attributes' => [
-        'productPrice' => 'cena proizvoda',
-        'productQuantity' => 'kolicina proizvoda',
-        'productWeight' => 'tezina proizvoda'
+        'productPrice' => 'Цена',
+        'productQuantity' => 'Количина',
+        'productWeight' => 'Тежина'
     ],
 
 ];

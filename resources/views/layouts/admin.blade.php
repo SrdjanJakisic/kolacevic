@@ -17,8 +17,6 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
-    {{-- <link href="../../../public/admin/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-    <link href="../../../public/admin/css/custom.css" rel="stylesheet" /> --}}
     <link href="{{ asset('admin/css/material-dashboard.css?v=2.1.2') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
 </head>

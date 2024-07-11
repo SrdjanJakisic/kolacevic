@@ -24,7 +24,6 @@
 }
 
 .card-config {
-    /* border-top: 2px groove  blue; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 20px;
@@ -60,4 +59,31 @@
 
 p {
     font-size: 30px;
+}
+
+.contactbutton {
+    width: 100%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.contact textarea
+{
+    height: 225px;
+}
+
+.contact iframe
+{
+    border:2px solid grey;
+}
+
+.aboutus p {
+    font-size: 25px;
+}
+
+.aboutus img
+{
+    border:2px solid grey;
+    width: 100%;
 }

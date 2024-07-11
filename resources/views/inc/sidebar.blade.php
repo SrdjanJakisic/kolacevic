@@ -25,6 +25,12 @@
                     Поруџбине
                 </a>
             </li>
+            <li class="nav-item {{ Request::is('carousel') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('carousel') }}">
+                    <i class="material-icons">list</i>
+                    Слајдери
+                </a>
+            </li>
         </ul>
     </div>
     @endif
