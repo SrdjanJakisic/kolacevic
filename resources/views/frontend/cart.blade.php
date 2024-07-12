@@ -20,16 +20,16 @@
                                 height="70px" width="70px">
                         </div>
                         <div class="col-md-3 my-auto">
-                            <h6>{{ $item->products->productName }}</h6>
+                            <h6>Назив: {{ $item->products->productName }}</h6>
                         </div>
                         <div class="col-md-2 my-auto">
-                            <h6>{{ $item->products->productPrice }}</h6>
+                            <h6>Цена: {{ $item->products->productPrice }}</h6>
                         </div>
                         <div class="col-md-3 my-auto">
                             <input type="hidden" class="productId" value="{{ $item->productId }}">
                             @if ($item->products->productQuantity >= $item->productQty)
                                 <label for="Quantity">Количина</label>
-                                <div class="input-group text-center mb-3">
+                                <div class="input-group text-center mb-3 divButtonPlusMinus">
                                     <button class="input-group-text changeQty decrement-btn">-</button>
                                     <input type="text" name="quantity" value="{{ $item->productQty }}"
                                         class="form-control qty-input text-center">

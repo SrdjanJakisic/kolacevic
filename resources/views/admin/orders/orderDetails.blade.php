@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.admin')
 
 @section('title')
 Админ панел - Детаљи поруџбине

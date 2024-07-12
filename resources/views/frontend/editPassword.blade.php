@@ -9,7 +9,7 @@
     <div class="col-10">
         <div class="card">
             <div class="card-header">
-                <h4>Промените шифру</h4><a class="btn btn-warning float-end" href="{{ url('edit-user/') }}">Повратак</a>
+                <h4>Промените шифру</h4><a class="btn btn-warning float-end" href="{{ url('edit-user/') }}">Назад</a>
                 
             </div>
             <div class="card-body">
