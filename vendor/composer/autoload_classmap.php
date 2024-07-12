@@ -41,6 +41,7 @@ return array(
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Homepage' => $baseDir . '/app/Models/Homepage.php',
     'App\\Models\\Impressions' => $baseDir . '/app/Models/Impressions.php',
+    'App\\Models\\Message' => $baseDir . '/app/Models/Message.php',
     'App\\Models\\Order' => $baseDir . '/app/Models/Order.php',
     'App\\Models\\OrderItem' => $baseDir . '/app/Models/OrderItem.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',

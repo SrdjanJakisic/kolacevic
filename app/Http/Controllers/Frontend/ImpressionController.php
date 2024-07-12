@@ -20,7 +20,8 @@ class ImpressionController extends Controller
     {
         $impression = new Impressions();
         $impression->impressionComment = $request->input('impresionComment');
-        $impression->username = Auth::user()->username;
+        $impression->email = Auth::user()->email;
+        $impression->name = Auth::user()->firstName;
 
         $impression->save();
         $request->session()->put('msg', 'Успешно остављен коментар!');

@@ -16,6 +16,7 @@ class Impressions extends Model
     [
         'impressionId',
         'impressionComment',
-        'username'
+        'name',
+        'email'
     ];
 }
