@@ -6,7 +6,6 @@
 
 @section('content')
 
-
 <div class="container my-3">
     <h1>Сви утисци</h1>
     @foreach ($impression as $item)

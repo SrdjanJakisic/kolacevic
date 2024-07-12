@@ -15,9 +15,11 @@
             <h1>Где нас можете наћи:</h1>
             <hr class="hr" />
             <div class="banner">
-                <i class="fa-brands fa-square-instagram"></i> <a rel="stylesheet" href="https://www.instagram.com/kolacevic.poslasticarnica/"> Посетите наш Инстаграм! </a> <br>
-                <i class="fa-brands fa-facebook"></i> <a rel="stylesheet" href="https://www.facebook.com/kolacevic.poslasticarnica/"> Посетите наш Фејсбук! </a> <br>
-                <i class="fa-solid fa-phone"></i>  062 721013 <br>
+                <i class="fa-brands fa-square-instagram"></i> <a rel="stylesheet"
+                    href="https://www.instagram.com/kolacevic.poslasticarnica/"> Посетите наш Инстаграм! </a> <br>
+                <i class="fa-brands fa-facebook"></i> <a rel="stylesheet"
+                    href="https://www.facebook.com/kolacevic.poslasticarnica/"> Посетите наш Фејсбук! </a> <br>
+                <i class="fa-solid fa-phone"></i> 062 721013 <br>
                 <i class="fa-solid fa-envelope"></i> kolacevicslatkarije@gmail.com
                 <br>
                 <br>
@@ -28,31 +30,41 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="col-md-5">
             <h1>Пошаљите нам поруку:</h1>
             <hr class="hr" />
-            <form>
+            <form action="{{ url('send-message') }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="email">Ваша имејл адреса</label>
-                    <input type="email" class="form-control">
+                    <input type="email" class="form-control" name="email" required>
                 </div>
                 <div class="form-group">
                     <label>Ваше име и презиме</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="name" required>
                 </div>
                 <div class="form-group">
                     <label>Ваш број телефона</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="phone" required>
                 </div>
                 <div class="form-group">
                     <label>Порука</label>
-                    <textarea type="text" class="form-control"></textarea>
+                    <textarea type="text" class="form-control" name="message" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary contactbutton">Пошаљите</button>
             </form>
         </div>
+        @if (session()->has('msg'))
+                <br>
+                <div class="alert alert-success alertConfig" role="alert">
+                    <h1 style="text-align: center">{{ session('msg') }}</h1>
+                </div>
+                @php
+                    session()->forget('msg');
+                @endphp
+        @endif
     </div>
 </div>
 @endsection

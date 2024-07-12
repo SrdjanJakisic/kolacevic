@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Message;
 use App\Models\Homepage;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -94,5 +95,11 @@ class DashboardController extends Controller
         $carousel->description = $request->input('carouselDescription');
         $carousel->update();
         return redirect('carousel')->with('msg', "Слајдер успешно измењен");
+    }
+
+    public function messagesList()
+    {
+        $messages = Message::all();
+        return view('admin.messages', compact('messages'));
     }
 }

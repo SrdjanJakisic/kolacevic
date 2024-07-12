@@ -40,6 +40,7 @@ Route::get('sort-by-price-desc/{id}', [FrontendProduct::class, 'sortByPriceDesc'
 Route::get('sort-by-price-asc/{id}', [FrontendProduct::class, 'sortByPriceAsc']);
 Route::get('aboutus', [FrontendController::class, 'showAboutus']);
 Route::get('contact', [FrontendController::class, 'showContact']);
+Route::post('send-message', [FrontendController::class, 'sendMessage']);
 
 Route::get('impressions', [ImpressionController::class, 'impressionsPage']);
 Route::post('add-impression', [ImpressionController::class, 'addImpresion']);
@@ -91,5 +92,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('carousel', [DashboardController::class, 'carouselList']);
     Route::get('edit-carousel/{id}', [DashboardController::class, 'editCarousel']);
     Route::put('update-carousel/{id}', [DashboardController::class, 'updateCarousel']);
+
+    Route::get('messages', [DashboardController::class, 'messagesList']);
 });
 

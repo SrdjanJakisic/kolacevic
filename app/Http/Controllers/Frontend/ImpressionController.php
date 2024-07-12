@@ -18,15 +18,12 @@ class ImpressionController extends Controller
 
     public function addImpresion(Request $request)
     {
-        $impressionComment = $request->input('impresionComment');
-        // $username = Auth
-
         $impression = new Impressions();
         $impression->impressionComment = $request->input('impresionComment');
         $impression->username = Auth::user()->username;
 
         $impression->save();
-        $request->session()->put('msg', 'Успешно додат менаџер!');
+        $request->session()->put('msg', 'Успешно остављен коментар!');
         $impression = Impressions::all();
         return view('frontend.impressions', compact('impression'));
     }

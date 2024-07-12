@@ -5,34 +5,40 @@
     </div>
 
     @if (Auth::user()->role_as == '2')
-    <div class="sidebar-wrapper">
-        <ul class="nav">
-            <li class="nav-item {{ Request::is('products') ? 'active' : '' }} ">
-                <a class="nav-link" href="{{ url('products') }}">
-                    <i class="material-icons">list</i>
-                    <p>Производи</p>
-                </a>
-            </li>
-            <li class="nav-item {{ Request::is('add-products') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('add-products') }}">
-                    <i class="material-icons">add</i>
-                    Додај производ
-                </a>
-            </li>
-            <li class="nav-item {{ Request::is('orders') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('orders') }}">
-                    <i class="material-icons">list</i>
-                    Поруџбине
-                </a>
-            </li>
-            <li class="nav-item {{ Request::is('carousel') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('carousel') }}">
-                    <i class="material-icons">list</i>
-                    Слајдери
-                </a>
-            </li>
-        </ul>
-    </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item {{ Request::is('products') ? 'active' : '' }} ">
+                    <a class="nav-link" href="{{ url('products') }}">
+                        <i class="material-icons">list</i>
+                        <p>Производи</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ Request::is('add-products') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('add-products') }}">
+                        <i class="material-icons">add</i>
+                        Додај производ
+                    </a>
+                </li>
+                <li class="nav-item {{ Request::is('orders') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('orders') }}">
+                        <i class="material-icons">list</i>
+                        Поруџбине
+                    </a>
+                </li>
+                <li class="nav-item {{ Request::is('carousel') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('carousel') }}">
+                        <i class="material-icons">list</i>
+                        Слајдери
+                    </a>
+                </li>
+                <li class="nav-item {{ Request::is('messages') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('messages') }}">
+                        <i class="material-icons">list</i>
+                        Поруке
+                    </a>
+                </li>
+            </ul>
+        </div>
     @endif
 
     <div class="sidebar-wrapper">
@@ -83,6 +89,12 @@
                 <a class="nav-link" href="{{ url('carousel') }}">
                     <i class="material-icons">list</i>
                     Слајдери
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('messages') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('messages') }}">
+                    <i class="material-icons">list</i>
+                    Поруке
                 </a>
             </li>
         </ul>
