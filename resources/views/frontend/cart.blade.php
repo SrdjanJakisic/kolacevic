@@ -54,7 +54,7 @@
                             
                             @if (Auth::user()->points > 5)
                             <label>Да ли желите да искористе попуст?</label>
-                            <br>
+                            
                             <a href="{{ url('getDiscount') }}" class="btn btn-outline-success">Примени попуст</a>
                             @else
                             <label>Да би остварили попуст потребно вам је 5 поена</label>

@@ -12,43 +12,53 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="card">
-                    <div class="card-body">
-                        <h6>Основни подаци</h6>
-                        <hr>
+                <div class="card-header">
+                            <h4>Основни подаци</h4>
+                        </div>
+                    <div class="card-body">          
                         <div class="row checkout-form">
                             <div class="col-md-6">
                                 <label for="firstName">Име:</label>
-                                <input type="text" class="form-control" placeholder="Унесите име" name="firstName" value="{{ Auth::user()->firstName }}">
+                                <input type="text" class="form-control" placeholder="Унесите име" name="firstName"
+                                    value="{{ Auth::user()->firstName }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="firstName">Презиме:</label>
-                                <input type="text" class="form-control" placeholder="Унесите презиме" name="lastName" value="{{ Auth::user()->lastName }}">
+                                <input type="text" class="form-control" placeholder="Унесите презиме" name="lastName"
+                                    value="{{ Auth::user()->lastName }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="firstName">е-пошта:</label>
-                                <input type="text" class="form-control" placeholder="Унесите е-пошту" name="email" value="{{ Auth::user()->email }}">
+                                <input type="text" class="form-control" placeholder="Унесите е-пошту" name="email"
+                                    value="{{ Auth::user()->email }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="firstName">Телефон:</label>
-                                <input type="text" class="form-control" placeholder="Унесите телефон" name="phone" value="{{ Auth::user()->phone }}">
+                                <input type="text" class="form-control" placeholder="Унесите телефон" name="phone"
+                                    value="{{ Auth::user()->phone }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="firstName">Адреса:</label>
-                                <input type="text" class="form-control" placeholder="Унесите адресу" name="address" value="{{ Auth::user()->address }}">
+                                <input type="text" class="form-control" placeholder="Унесите адресу" name="address"
+                                    value="{{ Auth::user()->address }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="firstName">Град:</label>
-                                <input type="text" class="form-control" placeholder="Унесите град" name="city" value="{{ Auth::user()->city }}">
+                                <input type="text" class="form-control" placeholder="Унесите град" name="city"
+                                    value="{{ Auth::user()->city }}">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="card">
+                <div class="card checkout">
+                    <div class="card-header">
+                        <h4>Детаљи проуџбине</h4><a href="{{ url('cart') }}"
+                            class="btn btn-warning float-end">Назад</a>
+
+                    </div>
                     <div class="card-body">
-                        <h6>Детаљи проуџбине</h6>
-                        <hr>
                         <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
@@ -59,12 +69,12 @@
                             </thead>
                             <tbody>
                                 @foreach ($cartItems as $item)
-                                <tr>
-                                    <td>{{ $item->products->productName }}</td>
-                                    <td>{{ $item->productQty }}</td>
-                                    <td>{{ $item->products->productPrice }}</td>
+                                    <tr>
+                                        <td>{{ $item->products->productName }}</td>
+                                        <td>{{ $item->productQty }}</td>
+                                        <td>{{ $item->products->productPrice }}</td>
 
-                                </tr>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

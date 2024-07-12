@@ -136,25 +136,82 @@ p {
 .editPassword a {
     display: inline-block;
     width: 170px;
+    margin-top: 0px;
 }
 
-.orderDetails a
-{
+.editPassword h4 {
+    display: inline-block;
+}
+
+.orderDetails a {
     display: inline;
     width: 200px;
     margin-top: 0px;
 }
 
-.orderDetails h4{
+.orderDetails h4 {
     display: inline;
     text-align: justify;
 }
 
-.orderDetails img{
+.orderDetails img {
     width: 60px;
     height: 60px;
 }
 
-.myOrders a{
+.myOrders a {
     margin-top: 0px;
+}
+
+.product h1 {
+    display: inline-block;
+}
+
+.sort {
+    margin-bottom: 15px;
+}
+
+.productDetails img {
+    height: 100%;
+    width: 100%;
+}
+
+.cartCont img {
+    width: 50px;
+    height: 50px;
+}
+
+.checkout a {
+    display: inline;
+    width: 100px;
+    margin-top: 0px;
+}
+
+.checkout h4 {
+    display: inline;
+}
+
+.wishlist img {
+    width: 50px;
+    height: 50px;
+}
+
+.adminOrderDetails h4 {
+    display: inline;
+}
+
+.adminOrderDetails a {
+    display: inline;
+    width: 100px;
+    margin-top: 0px;
+}
+
+.adminOrders a
+{
+    display: inline;
+    margin-top: 0px;
+}
+.adminOrders h4
+{
+   display: inline;
 }

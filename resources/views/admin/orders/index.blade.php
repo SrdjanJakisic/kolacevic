@@ -16,14 +16,12 @@
     @endphp
 @endif
 
-<div class="container">
+<div class="container adminOrders">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-primary">
-                    <h4 class="text-white">Поруџбине на чекању
-                        <a href="{{ 'completed-orders' }}" class="btn btn-warning float-right">Извршене поруџбине</a>
-                    </h4>
+                    <h4 class="text-white">Поруџбине на чекању</h4><a href="{{ 'completed-orders' }}" class="btn btn-warning float-right">Извршене поруџбине</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered">

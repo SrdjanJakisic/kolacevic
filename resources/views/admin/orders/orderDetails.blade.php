@@ -6,14 +6,12 @@
 
 @section('content')
 
-<div class="container py-5">
+<div class="container py-5 adminOrderDetails">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header primary">
-                    <h4>Детаљи поруџбине
-                        <a href="{{ url('orders') }}" class="btn btn-warning float-end">Назад</a>
-                    </h4>
+                    <h4>Детаљи поруџбине</h4><a href="{{ url('orders') }}" class="btn btn-warning float-right">Назад</a>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -42,7 +40,6 @@
                                         <th>Назив</th>
                                         <th>Количина</th>
                                         <th>Цена</th>
-                                        <!-- <th>Слика</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,10 +48,6 @@
                                         <td>{{ $item->productName }}</td>
                                         <td>{{ $item->qty }}</td>
                                         <td>{{ $item->price }}</td>
-                                        <!-- <td>
-                                            <img class="product-image" src="{{ asset('assets/uploads/products/'.$item->productImage) }}"
-                                                width="50px" alt="Слика производа">
-                                        </td> -->
                                     </tr>
                                     @endforeach
                                 </tbody>

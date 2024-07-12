@@ -9,7 +9,7 @@
     <h1>Листа жеља</h1>
 </div>
 
-<div class="container my-3">
+<div class="container my-3 wishlist">
     <div class="card shadow">
         <div class="card-body">
             @if($wishlist->count() > 0)

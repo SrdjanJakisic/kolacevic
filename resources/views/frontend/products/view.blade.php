@@ -4,12 +4,6 @@
 
 @section('content')
 
-{{-- <div class="py-3 mb-4 shadow-sm bg-warning border-top">
-    <div class="container">
-        <h6 class="mb-0"> <a href="{{ url('category/') }}">Категорије </a> / <a href="{{ url('view-category/ . $products->category->id . }') }}">{{ $products->category->name }} </a> / {{ $products->productName }} </h6>
-    </div>
-</div> --}}
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url('/') }}">Почетна</a></li>
@@ -19,7 +13,7 @@
     </ol>
 </nav>
 
-<div class="container">
+<div class="container productDetails">
     <div class="card shadow product_data">
         <div class="card-body">
             <div class="row">
