@@ -68,59 +68,93 @@ p {
     box-sizing: border-box;
 }
 
-.contact textarea
-{
+.contact textarea {
     height: 225px;
 }
 
-.contact iframe
-{
-    border:2px solid grey;
+.contact iframe {
+    border: 2px solid grey;
 }
 
 .aboutus p {
     font-size: 25px;
 }
 
-.aboutus img
-{
-    border:2px solid grey;
+.aboutus img {
+    border: 2px solid grey;
     width: 100%;
 }
 
-.card img
-{
+.card img {
     height: 200px;
-    width:100%;
+    width: 100%;
 }
 
-.mt-3
-{
+.mt-3 {
     font-size: 20px;
 }
 
-.card a
-{
+.card a {
     width: 100%;
     margin-top: 10px;
 }
 
-.card p
-{
+.card p {
     font-size: 25px;
     text-align: justify;
 }
-.card span
-{
+
+.card span {
     font-size: 20px;
 }
 
-.card
-{
+.card {
     border: 2px solid green;
 }
-.card h3
-{
+
+.card h3 {
     text-align: center;
 }
 
+.edituser button {
+    display: inline-block;
+    width: 170px;
+    margin-top: 10px;
+}
+
+.edituser a {
+    display: inline-block;
+    width: 170px;
+}
+
+.editPassword button {
+    display: inline-block;
+    width: 170px;
+    margin-top: 10px;
+}
+
+.editPassword a {
+    display: inline-block;
+    width: 170px;
+}
+
+.orderDetails a
+{
+    display: inline;
+    width: 200px;
+    margin-top: 0px;
+}
+
+.orderDetails h4{
+    display: inline;
+    text-align: justify;
+}
+
+.orderDetails img{
+    width: 60px;
+    height: 60px;
+}
+
+.myOrders a{
+    margin-top: 0px;
+}

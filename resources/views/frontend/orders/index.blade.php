@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="container py-5">
+<div class="container py-5 myOrders">
     <div class="row">
         <div class="col-md-12">
             <div class="card">

@@ -5,7 +5,7 @@
     <div class="card-header">
         <h4>Промените податке</h4>
     </div>
-    <div class="card-body">
+    <div class="card-body edituser">
         <form action="{{ url('update-user/'. $user->id) }}" method="POST">
             @method('PUT')
             @csrf

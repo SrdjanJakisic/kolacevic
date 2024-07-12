@@ -5,7 +5,7 @@
     <div class="card-header">
         <h4>Промените шифру</h4>
     </div>
-    <div class="card-body">
+    <div class="card-body editPassword">
         <form action="{{ url('update-password/'. $user->id) }}" method="POST">
             @method('PUT')
             @csrf
