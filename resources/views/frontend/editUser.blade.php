@@ -7,6 +7,24 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if (session()->has('msg'))
+                <br>
+                <div class="alert alert-success alertConfig" role="alert">
+                    <h1>{{ session('msg') }}</h1>
+                </div>
+                @php
+                    session()->forget('msg');
+                @endphp
+        @endif
         <div class="card">
             <div class="card-header">
                 <h4>Промените податке</h4>

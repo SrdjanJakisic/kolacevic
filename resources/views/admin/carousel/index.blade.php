@@ -28,7 +28,7 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <h4>Слајдери</h4>
+            <h4 style="font-weight:bold;">Слајдери</h4>
             <hr>
         </div>
         <div class="card-body">

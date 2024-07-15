@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4>Додај категорију</h4>
+        <h4 style="font-weight:bold;">Додај категорију</h4>
     </div>
     <div class="card-body">
         <form action="{{ url('insert-categories') }}" method="POST" enctype="multipart/form-data">

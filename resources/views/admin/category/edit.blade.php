@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4>Измени категорију</h4>
+        <h4 style="font-weight:bold;">Измени категорију</h4>
     </div>
     <div class="card-body">
         <form action="{{ url('update-category/' . $category->id) }}" method="POST" enctype="multipart/form-data">

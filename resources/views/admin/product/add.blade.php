@@ -18,7 +18,7 @@
 @endif
 <div class="card">
     <div class="card-header">
-        <h4>Додај производ</h4>
+        <h4 style="font-weight:bold;">Додај производ</h4>
     </div>
     <div class="card-body">
         <form action="{{ url('insert-products') }}" method="POST" enctype="multipart/form-data">

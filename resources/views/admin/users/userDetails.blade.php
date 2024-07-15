@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Детаљи корисника
+                    <h4 style="font-weight:bold;">Детаљи корисника
                         <a href="{{ url('users') }}" class="btn btn-info float-right">Повратак на кориснике</a>
                     </h4>
                     <hr>

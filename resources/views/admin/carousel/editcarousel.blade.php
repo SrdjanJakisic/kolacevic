@@ -27,7 +27,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h4>Измени слајдер</h4>
+        <h4 style="font-weight:bold;">Измени слајдер</h4>
     </div>
     <div class="card-body">
         <form action="{{ url('update-carousel/' . $carousel->id) }}" method="POST" enctype="multipart/form-data">

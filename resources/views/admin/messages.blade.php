@@ -9,7 +9,7 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <h4>Поруке</h4>
+            <h4 style="font-weight:bold;">Поруке</h4>
             <hr>
         </div>
         <div class="card-body">

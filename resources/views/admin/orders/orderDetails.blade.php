@@ -10,8 +10,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header primary">
-                    <h4>Детаљи поруџбине</h4><a href="{{ url('orders') }}" class="btn btn-warning float-right">Назад</a>
+                <div class="card-header bg-primary">
+                    <h4 class="text-white" style="width: 300px; display: inline-block; margin-top:14px; font-weight:bold;">Детаљи поруџбине</h4><a href="{{ url('orders') }}" class="btn btn-warning float-right">Назад</a>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -58,14 +58,14 @@
                                 <form action="{{ url('update-order/'.$order->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <label for="">Статус поруџбине</label>
+                                    <label for="">Статус поруџбине: </label>
                                     <select class="form-select" name="orderStatus">
                                         <option {{ $order->orderStatus == '0' ? 'selected' : '' }} value="0">На чекању
                                         </option>
                                         <option {{ $order->orderStatus == '1' ? 'selected' : '' }} value="1">Обрађено
                                         </option>
                                     </select>
-                                    <button type="submit" class="btn btn-primary mt-3 float-end">Обради</button>
+                                    <button type="submit" class="btn btn-primary mt-3 float-right">Обради</button>
                                 </form>
                             </div>
                         </div>

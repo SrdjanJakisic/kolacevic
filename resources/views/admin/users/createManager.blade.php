@@ -1,24 +1,22 @@
 @extends('layouts.admin')
 
 @section('content')
-<br>
-<br>
-<br>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="card">
-            <div class="card-header">
-                <h4>Додај менаџера</h4>
+            <div class="card-header bg-primary">
+                <h4 class="text-white" style="width: 300px; display: inline-block; margin-top:14px; font-weight:bold;">
+                    Додај менаџера</h4><a href="{{ url('users') }}" class="btn btn-warning float-right">Назад</a>
             </div>
             <div class="card-body">
                 <form action="{{ url('insert-manager') }}" method="POST">

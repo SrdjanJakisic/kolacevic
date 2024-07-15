@@ -33,7 +33,10 @@ class UserController extends Controller
     {
         $validator = $request->validate(
             [
-                'phone' => ['int']
+                'phone' => ['required', 'regex:/^[+]*\d*$/']
+            ],
+            [
+                'phone.regex' => 'Број телефона није у исправном формату'
             ]
         );
 
@@ -63,17 +66,16 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-        if($password1 != $password2)
-        {
+        if ($password1 != $password2) {
             $request->session()->put('msg', 'Шифре нису исте!');
             return view('frontend.editPassword', compact('user'));
-        }
-        else
-        {
+        } else {
             $user->password = Hash::make($request->input('password1'));
             $user->update();
             $request->session()->put('msg', 'Успешно измењенa шифра!');
             return view('frontend.editUser', compact('user'));
         }
+
+
     }
 }

@@ -19,7 +19,7 @@ session()->forget('msg');
 <div>
     <div class="card">
         <div class="card-header">
-            <h4>Производи</h4>
+            <h4 style="font-weight:bold;">Производи</h4>
             <hr>
         </div>
         <div class="card-body">

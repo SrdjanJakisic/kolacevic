@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('view-order/{id}', [UserController::class, 'orderDetails']);
 
     Route::get('wishlist', [WishlistController::class, 'index']);
-
+    
     Route::get('edit-user', [UserController::class, 'editUser']);
     Route::put('update-user/{id}', [UserController::class, 'updateUser']);
     Route::get('edit-password/{id}', [UserController::class, 'editPassword']);

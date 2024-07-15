@@ -222,3 +222,10 @@ p {
 .wishlist button {
     display: inline;
 }
+
+.card-header bg-primary h4 {
+    width: 300px; 
+    display: inline-block; 
+    margin-top:14px; 
+    font-weight:bold;
+}

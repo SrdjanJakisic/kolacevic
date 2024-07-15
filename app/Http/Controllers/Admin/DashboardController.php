@@ -44,7 +44,7 @@ class DashboardController extends Controller
                 'phone' => ['required', 'regex:/^[+]*\d*$/']
             ],
             [
-                'phone.regex' => 'broj telefona nije u ispravnom formatu'
+                'phone.regex' => 'Број телефона није у исправном формату'
             ]
         );
 
