@@ -5,13 +5,12 @@
 @endsection
 
 @section('content')
-
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         @foreach ($homepage as $item)
             <div class="carousel-item active">
                 <img src="{{ asset('assets/uploads/home/' . $item->image) }}" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block" style='background-color: rgba(0, 0, 0, 0.4);'>
                     <h1>{{$item->title}}</h1>
                     <p>{{$item->description}}</p>
                     <a type="button" href="{{ url($item->url) }}" class="btn btn-info">Иди на страницу</a>

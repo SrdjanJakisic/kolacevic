@@ -41,7 +41,7 @@
                     <div class="card">
                         <img src="{{ asset('assets/uploads/products/' . $item->productImage) }}" alt="">
                         <div class="card-body">
-                            <h3>{{ $item->productName }}</h3>
+                            <h3 style="height:100px;">{{ $item->productName }}</h3>
                             <input type="text" value="{{ $item->id }}" class="productId" hidden>
                             <input type="text" value="1" class="qty-input" hidden>
                             <span class="float-start">Цена: {{ $item->productPrice }}рсд</span>

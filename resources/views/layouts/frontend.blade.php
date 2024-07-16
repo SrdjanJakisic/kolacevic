@@ -34,7 +34,6 @@
         <div class="content">
             @yield('content')
         </div>
-
     </div>
 
     @if(session('status'))
@@ -58,4 +57,3 @@
 </body>
 
 </html>
-<!-- @include('inc.footer') -->

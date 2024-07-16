@@ -22,7 +22,7 @@
                         alt="">
                 </div>
                 <div class="col-md-8">
-                    <h2 class="mb-0"  style="width: 300px; display: inline-block; font-weight:bold;">{{ $products->productName }} </h2> <a style="width: 200px; margin-top: 0px;" class="btn btn-warning float-end" href="{{ url('view-category/' . $products->category->id) }}">Назад</a>
+                    <h2 class="mb-0"  style="width: 630px; display: inline-block; font-weight:bold;">{{ $products->productName }} </h2> <a style="width: 200px; margin-top: 0px;" class="btn btn-warning float-end" href="{{ url('view-category/' . $products->category->id) }}">Назад</a>
                     <hr>
                     <p class="mt-3"> Цена: {{ $products->productPrice }} динара</p>
                     <p class="mt-3"> Опис: {{ $products->productDescription }}</p>

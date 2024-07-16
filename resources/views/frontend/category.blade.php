@@ -25,7 +25,7 @@
                             <a style="text-decoration: none; color: black;" href="{{ url('view-category/' . $item->id) }}">
                                 <div class="card">
                                     <img src="{{ asset('assets/uploads/categories/' . $item->image) }}" alt="">
-                                    <div class="card-body">
+                                    <div class="card-body" style="height:300px;">
                                         <h3>{{ $item->name }}</h3>
                                         <p>{{ $item->description }}</p>
                                     </div>
