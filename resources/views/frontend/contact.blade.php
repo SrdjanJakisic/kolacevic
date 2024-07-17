@@ -11,6 +11,20 @@
     <br>
     <div class="row">
         <div class="col-1"></div>
+        <div class="col-10">
+            @if (session()->has('msg'))
+                        <br>
+                        <div class="alert alert-success alertConfig" role="alert">
+                            <h1 style="text-align: center">{{ session('msg') }}</h1>
+                        </div>
+                        @php
+                            session()->forget('msg');
+                        @endphp
+            @endif
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
         <div class="col-md-5">
             <h1>Где нас можете наћи:</h1>
             <hr class="hr" />
@@ -56,15 +70,6 @@
                 <button type="submit" class="btn btn-primary contactbutton">Пошаљите</button>
             </form>
         </div>
-        @if (session()->has('msg'))
-                <br>
-                <div class="alert alert-success alertConfig" role="alert">
-                    <h1 style="text-align: center">{{ session('msg') }}</h1>
-                </div>
-                @php
-                    session()->forget('msg');
-                @endphp
-        @endif
     </div>
 </div>
 @endsection

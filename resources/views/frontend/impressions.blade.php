@@ -5,12 +5,23 @@
 @endsection
 
 @section('content')
-
+<br>
+<br>
 <div class="row">
-    <div class="col-1"></div>
-    <div class="col-10">
+    <div class="col-2"></div>
+    <div class="col-8">
+        @if (session()->has('msg'))
+                <br>
+                <div class="alert alert-success alertConfig" role="alert">
+                    <h1>{{ session('msg') }}</h1>
+                </div>
+                @php
+                    session()->forget('msg');
+                @endphp
+        @endif
         <div class="container my-3">
             <h1>Сви утисци</h1>
+            <hr class="hr" />
             @foreach ($impression as $item)
                 <div class="form-floating">
                     <textarea class="form-control" id="floatingTextarea">{{ $item->impressionComment }}</textarea><br>

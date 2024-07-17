@@ -12,10 +12,10 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="card">
-                <div class="card-header">
-                            <h4>Основни подаци</h4>
-                        </div>
-                    <div class="card-body">          
+                    <div class="card-header">
+                        <h4>Основни подаци</h4>
+                    </div>
+                    <div class="card-body">
                         <div class="row checkout-form">
                             <div class="col-md-6">
                                 <label for="firstName">Име:</label>
@@ -54,9 +54,7 @@
             <div class="col-md-5">
                 <div class="card checkout">
                     <div class="card-header">
-                        <h4>Детаљи проуџбине</h4><a href="{{ url('cart') }}"
-                            class="btn btn-warning float-end">Назад</a>
-
+                        <h4>Детаљи проуџбине</h4><a href="{{ url('cart') }}" class="btn btn-warning float-end">Назад</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-bordered">
